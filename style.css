@@ -1,89 +1,110 @@
-/* General Styles */
+/* General Reset */
+body, h1, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
+    background-color: #f4f4f4;
+    line-height: 1.6;
 }
 
+/* Header */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
+    background: #fff;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
 }
 
-header .logo {
-  font-size: 24px;
-  font-weight: bold;
+header .logo h1 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
 }
 
 header nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-header nav ul li {
-  margin-left: 20px;
+    list-style: none;
+    display: flex;
+    gap: 15px;
 }
 
 header nav ul li a {
-  text-decoration: none;
-  color: #333;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 header nav ul li a:hover {
-  color: #000;
+    color: #0077cc;
 }
 
-/* Gallery Styles */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 10px;
-  padding: 20px;
+/* Main Content */
+main {
+    padding: 20px 30px;
 }
 
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+main h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
 }
 
-.gallery-item img:hover {
-  transform: scale(1.05);
+/* Gallery Section */
+.gallery .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Flexible grid */
+    gap: 15px; /* Space between items */
 }
 
-/* About and Contact Sections */
-section {
-  padding: 40px 20px;
-  text-align: center;
+.gallery .grid .item {
+    position: relative;
+    overflow: hidden; /* Ensures images do not overflow their container */
+    border-radius: 8px; /* Optional: Rounded corners */
+    border: 1px solid #ddd; /* Adds a subtle border */
 }
 
-section h2 {
-  margin-bottom: 20px;
-  font-size: 28px;
+.gallery .grid .item img {
+    width: 100%; /* Images stretch to fill container width */
+    height: 200px; /* Fixed height for uniform grid cells */
+    object-fit: cover; /* Crops images while maintaining aspect ratio */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds smooth animations */
 }
 
-section p {
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 18px;
+.gallery .grid .item img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hover shadow */
+}
+
+/* About and Contact Section */
+#about, #contact {
+    margin: 50px 0;
+    text-align: center;
+}
+
+#about p, #contact p {
+    margin-top: 10px;
+    font-size: 1.1rem;
 }
 
 /* Footer */
-.contact a {
-  color: #0077cc;
-  text-decoration: none;
+footer {
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    font-size: 0.9rem;
+    color: #666;
 }
 
-.contact a:hover {
-  text-decoration: underline;
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .gallery .grid .item img {
+        height: 150px; /* Reduce height on smaller screens */
+    }
 }
