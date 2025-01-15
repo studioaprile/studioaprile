@@ -100,9 +100,14 @@ footer {
     color: #666;
 }
 
-/* Responsive Adjustments */
+/* Responsive Adjustments for Mobile */
 @media (max-width: 600px) {
+    .gallery .grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
     .gallery .grid .item img {
-        height: 150px; /* Reduce height on smaller screens */
+        width: 100%; /* Maintain full width */
+        height: auto; /* Maintain aspect ratio */
     }
 }
