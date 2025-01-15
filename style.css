@@ -1,9 +1,25 @@
+@font-face {
+    font-family: 'Falster'; /* Name of the font */
+    src: url('./fonts/Falster-Regular.woff2') format('woff2'),
+         url('./fonts/Falster-Regular.woff') format('woff');
+    font-weight: normal; /* Font weight */
+    font-style: normal; /* Font style */
+}
+
+@font-face {
+    font-family: 'Falster';
+    src: url('./fonts/Falster-Bold.woff2') format('woff2'),
+         url('./fonts/Falster-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
 /* General Reset */
 body, h1, h2, p, ul, li, a {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Falster', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #333;
 }
 
@@ -24,7 +40,6 @@ header {
 
 header .logo h1 {
     font-size: 1.5rem;
-    text-transform: uppercase;
 }
 
 header nav ul {
@@ -79,6 +94,23 @@ main h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hover shadow */
 }
 
+/* Description Under Image */
+.gallery .grid .item .description {
+    margin-top: 10px; /* Space between image and text */
+    text-align: center;
+    font-size: 14px; /* Small font size */
+    line-height: 1.4; /* Improve readability */
+    color: #333; /* Dark gray color */
+}
+
+.gallery .grid .item .description p {
+    margin: 5px 0; /* Space between lines */
+}
+
+.gallery .grid .item .description strong {
+    font-size: 16px; /* Slightly larger for the title */
+}
+
 /* About and Contact Section */
 #about, #contact {
     margin: 50px 0;
@@ -109,5 +141,94 @@ footer {
     .gallery .grid .item img {
         width: 100%; /* Maintain full width */
         height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* Lightbox Styles */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above other elements */
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%; /* Limit max width to 90% of viewport */
+    max-height: 90%; /* Limit max height to 90% of viewport */
+    display: flex;
+    flex-direction: column; /* Stack image and description vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center-align text */
+    color: #fff; /* Ensure text is visible on dark background */
+    z-index: 1100; /* Keep it above the lightbox container */
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 70%; /* Prevent the image from taking up all the space */
+    display: block;
+    margin: 0 auto;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px; /* Large enough to be noticeable */
+    color: white; /* White color for visibility */
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 5px 10px;
+    z-index: 1100; /* Ensure it's above the image */
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.8); /* Light hover effect */
+    color: black; /* Change text color for contrast */
+}
+
+
+/* Lightbox Description */
+.lightbox-description {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ffffff; /* Explicitly set text to white */
+    z-index: 1100; /* Ensure it appears above the lightbox container */
+}
+
+.lightbox-description p {
+    margin: 5px 0;
+    color: inherit; /* Inherit the color from the parent */
+}
+
+.lightbox-description strong {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff; /* Explicitly set bold text to white */
+}
+
+/* Ensure lightbox scales well on very small screens */
+@media (max-width: 600px) {
+    .lightbox-content {
+        max-width: 100%; /* Use the full width */
+        max-height: 100%; /* Use the full height */
+        padding: 10px; /* Add some padding for smaller screens */
+    }
+
+    .lightbox-close {
+        font-size: 18px; /* Slightly smaller close button for small screens */
+        top: 5px;
+        right: 5px;
+        z-index: 1200; /* Ensure it is above all other elements */
     }
 }
