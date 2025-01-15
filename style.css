@@ -65,14 +65,12 @@ main h2 {
 .gallery .grid .item {
     position: relative;
     overflow: hidden; /* Ensures images do not overflow their container */
-    border-radius: 8px; /* Optional: Rounded corners */
-    border: 1px solid #ddd; /* Adds a subtle border */
 }
 
 .gallery .grid .item img {
-    width: 100%; /* Images stretch to fill container width */
-    height: 200px; /* Fixed height for uniform grid cells */
-    object-fit: cover; /* Crops images while maintaining aspect ratio */
+    width: 100%; /* Scale images to fit the grid item width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove inline block spacing */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds smooth animations */
 }
 
