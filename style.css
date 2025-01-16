@@ -39,7 +39,7 @@ header {
 }
 
 header .logo h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 header nav ul {
@@ -51,12 +51,12 @@ header nav ul {
 header nav ul li a {
     text-decoration: none;
     color: #333;
-    font-weight: bold;
+    font-weight: normal;
     transition: color 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #0077cc;
+    color: #d8d6d6;
 }
 
 /* Main Content */
@@ -66,8 +66,8 @@ main {
 
 main h2 {
     margin-bottom: 20px;
-    font-size: 2rem;
-    text-align: center;
+    font-size: 1rem;
+    text-align: left;
 }
 
 /* Gallery Section */
@@ -97,7 +97,7 @@ main h2 {
 /* Description Under Image */
 .gallery .grid .item .description {
     margin-top: 10px; /* Space between image and text */
-    text-align: center;
+    text-align: left;
     font-size: 14px; /* Small font size */
     line-height: 1.4; /* Improve readability */
     color: #333; /* Dark gray color */
@@ -114,7 +114,7 @@ main h2 {
 /* About and Contact Section */
 #about, #contact {
     margin: 50px 0;
-    text-align: center;
+    text-align: left;
 }
 
 #about p, #contact p {

@@ -21,6 +21,13 @@ const galleryData = [
         size: '50 cm x 25 cm',
         year: '2021',
     },
+    {
+        src: './images/image4.jpg',
+        title: 'Vase',
+        material: 'Maple Wood',
+        size: '30 cm x 20 cm',
+        year: '2022',
+    },
     // Add more items as needed
 ];
 
