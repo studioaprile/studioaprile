@@ -39,7 +39,7 @@ header {
 }
 
 header .logo h1 {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 header nav ul {
@@ -85,6 +85,7 @@ main h2 {
 .gallery .grid .item img {
     width: 100%; /* Scale images to fit the grid item width */
     height: auto; /* Maintain aspect ratio */
+    max-width: 500px;           /* Prevent scaling beyond the original size */
     display: block; /* Remove inline block spacing */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds smooth animations */
 }
@@ -231,4 +232,121 @@ footer {
         right: 5px;
         z-index: 1200; /* Ensure it is above all other elements */
     }
+}
+/* About Page Layout */
+.about-page {
+    padding: 20px;
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Left Column: Photo */
+.about-photo {
+    flex: 1 1 40%; /* Adjust size as needed */
+    text-align: center;
+}
+
+.about-photo img {
+    max-width: 100%;
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Right Column: Description */
+.about-description {
+    flex: 1 1 55%; /* Adjust size as needed */
+    text-align: left;
+}
+
+.about-description h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.about-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Journal Section */
+.journal-section {
+    margin-top: 40px;
+}
+
+.journal-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.journal-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.journal-entry {
+    flex: 1 1 calc(50% - 20px); /* Two-column layout */
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.journal-entry h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.journal-entry p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.journal-entry a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+.journal-entry a:hover {
+    text-decoration: underline;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.carousel-controls button:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
 }
