@@ -20,3 +20,55 @@
         <lastmod>2025-01-22</lastmod>
         <priority>0.6</priority>
     </url>
+    <!-- Individual Items Using Query Parameters -->
+    <url>
+        <loc>https://studioaprile.com/index.html?item=0</loc>
+        <lastmod>2025-01-22</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://studioaprile.com/index.html?item=1</loc>
+        <lastmod>2025-01-22</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://studioaprile.com/index.html?item=2</loc>
+        <lastmod>2025-01-22</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://studioaprile.com/index.html?item=3</loc>
+        <lastmod>2025-01-22</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://studioaprile.com/index.html?item=4</loc>
+        <lastmod>2025-01-22</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://studioaprile.com/index.html?item=5</loc>
+        <lastmod>2025-01-22</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://studioaprile.com/index.html?item=6</loc>
+        <lastmod>2025-01-22</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://studioaprile.com/index.html?item=7</loc>
+        <lastmod>2025-01-22</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://studioaprile.com/index.html?item=8</loc>
+        <lastmod>2025-01-22</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://studioaprile.com/index.html?item=9</loc>
+        <lastmod>2025-01-22</lastmod>
+        <priority>0.7</priority>
+    </url>
+</urlset>
