@@ -19,30 +19,6 @@ const galleryData = [
         description: 'Oak Wood | Galloway | Ø24cm x h29cm | 2024',
     },
     {
-        src: './images/4.jpeg',
-        thumbnail: './thumbnails/4.jpeg', 
-        title: '6580',
-        description: 'Oak Wood | Galloway | Ø18cm x h50cm | 2024',
-    },
-    {
-        src: './images/5.jpeg',
-        thumbnail: './thumbnails/5.jpeg', 
-        title: '6588',
-        description: 'Oak Wood | Galloway | Ø16cm x h23cm | 2025',
-    },
-    {
-        src: './images/6.jpeg',
-        thumbnail: './thumbnails/6.jpeg', 
-        title: '6590',
-        description: 'Oak Wood | Galloway | Ø14cm x h25cm | 2025',
-    },
-    {
-        src: './images/7.jpeg',
-        thumbnail: './thumbnails/7.jpeg', 
-        title: '6580, 6588, 6590',
-        description: 'Oak Wood | Galloway | 2025',
-    },
-    {
         src: './images/8.jpeg',
         thumbnail: './thumbnails/8.jpeg', 
         title: '6594',
@@ -114,6 +90,30 @@ const galleryData = [
         thumbnail: './thumbnails/19.jpeg', 
         title: '5680, 5681, 4989',
         description: 'Mix Wood | 2024',
+    },
+        {
+        src: './images/4.jpeg',
+        thumbnail: './thumbnails/4.jpeg', 
+        title: '6580',
+        description: 'Oak Wood | Galloway | Ø18cm x h50cm | 2024',
+    },
+    {
+        src: './images/5.jpeg',
+        thumbnail: './thumbnails/5.jpeg', 
+        title: '6588',
+        description: 'Oak Wood | Galloway | Ø16cm x h23cm | 2025',
+    },
+    {
+        src: './images/6.jpeg',
+        thumbnail: './thumbnails/6.jpeg', 
+        title: '6590',
+        description: 'Oak Wood | Galloway | Ø14cm x h25cm | 2025',
+    },
+    {
+        src: './images/7.jpeg',
+        thumbnail: './thumbnails/7.jpeg', 
+        title: '6580, 6588, 6590',
+        description: 'Oak Wood | Galloway | 2025',
     },
     // Add more gallery items as needed
 ];
