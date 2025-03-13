@@ -86,6 +86,12 @@ const galleryData = [
         description: 'Oak Wood | Galloway | Ø25cm x h20cm | 2024',
     },
     {
+        src: './images/20.jpeg',
+        thumbnail: './thumbnails/20.jpeg', 
+        title: '4989',
+        description: 'Oak Wood | Galloway | Ø15cm x h35cm | 2024',
+    },
+    {
         src: './images/19.jpeg',
         thumbnail: './thumbnails/19.jpeg', 
         title: '5680, 5681, 4989',
