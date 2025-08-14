@@ -1,6 +1,66 @@
 // Gallery Data: Contains the main image and additional carousel images
 const galleryData = [
     {
+        src: './images/0100.jpeg',
+        thumbnail: './thumbnails/0100.jpeg', 
+        title: '#0100',
+        description: 'Oak Wood | Galloway | 2025',
+    },
+    {
+        src: './images/0101.jpeg',
+        thumbnail: './thumbnails/0101.jpeg', 
+        title: '#0101',
+        description: 'Oak Wood | Galloway | 2025',
+    },
+    {
+        src: './images/0101b.jpeg',
+        thumbnail: './thumbnails/0101b.jpeg', 
+        title: '#0101',
+        description: 'Oak Wood | Galloway | 2025',
+    },
+    {
+        src: './images/0102.jpeg',
+        thumbnail: './thumbnails/0102.jpeg', 
+        title: '#0102',
+        description: 'Oak Wood | Galloway | 2025',
+    },
+    {
+        src: './images/0104.jpeg',
+        thumbnail: './thumbnails/0104.jpeg', 
+        title: '#0104',
+        description: 'Oak Wood | Galloway | 2025',
+    },
+    {
+        src: './images/0106.jpeg',
+        thumbnail: './thumbnails/0106.jpeg', 
+        title: '#0106',
+        description: 'Oak Wood | Galloway | 2025',
+    },
+    {
+        src: './images/0107.jpeg',
+        thumbnail: './thumbnails/0107.jpeg', 
+        title: '#0107',
+        description: 'Oak Wood | Galloway | 2025',
+    },
+    {
+        src: './images/0108.jpeg',
+        thumbnail: './thumbnails/0108.jpeg', 
+        title: '#0108',
+        description: 'Oak Wood | Galloway | 2025',
+    },
+    {
+        src: './images/0109.jpeg',
+        thumbnail: './thumbnails/0109.jpeg', 
+        title: '#0109',
+        description: 'Oak Wood | Galloway | 2025',
+    },
+    {
+        src: './images/0109b.jpeg',
+        thumbnail: './thumbnails/0109b.jpeg', 
+        title: '#0109',
+        description: 'Oak Wood | Galloway | 2025',
+    },
+    {
         src: './images/1.jpeg', // Fullscreen image for lightbox
         thumbnail: './thumbnails/1.jpeg', // Thumbnail for the grid
         title: '6565',
