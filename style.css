@@ -75,10 +75,14 @@ header nav ul li a:hover {
 .gallery .grid .item {
     position: relative;
     overflow: hidden;
+    width: 500px;
+    height: 500px;
+    aspect-ratio: 1 / 1;
 }
 
 .gallery .grid .item img {
     width: 100%;
+    height: 100%;
     transition: transform 0.3s ease;
 }
 
