@@ -28,13 +28,13 @@ const galleryData = [
         src: './images/0102.jpeg',
         thumbnail: './thumbnails/0102.jpeg', 
         title: '#0102',
-        description: 'Oak Wood | Galloway | 2025',
+        description: 'Oak Wood | Tooting | 2025',
     },
     {
         src: './images/0101.jpeg',
         thumbnail: './thumbnails/0101.jpeg', 
         title: '#0101',
-        description: 'Oak Wood | Galloway | 2025',
+        description: 'Oak Wood | Tooting | 2025',
     },
     {
         src: './images/0100.jpeg',
