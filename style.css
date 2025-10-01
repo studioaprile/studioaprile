@@ -358,3 +358,40 @@ footer {
         max-width: 100%;
     }
 }
+
+/* === Gallery: square & responsive tiles (override) === */
+.gallery .grid {
+  /* Allow responsive columns that can shrink on small screens, but cap at 500px */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 500px));
+}
+
+.gallery .grid .item {
+  /* Make each tile a square box */
+  aspect-ratio: 1 / 1;
+  overflow: hidden; /* already set above, restating for clarity */
+}
+
+/* Fill the square and crop neatly */
+.gallery .grid .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;  /* keep subject centred */
+  /* keep your existing transition */
+}
+
+/* === Mobile: tighter crop (zoom in) === */
+@media (max-width: 600px) {
+  /* one column layout is already set in your CSS */
+
+  /* Zoom the image itself on mobile to reduce “white” around subject */
+  .gallery .grid .item img {
+    transform: scale(1.25);       /* increase if you want tighter crop: 1.3–1.4 */
+    transform-origin: center;      /* centre the zoom */
+  }
+
+  /* Keep hover feeling consistent on mobile (optional; mobile hover rarely applies) */
+  .gallery .grid .item img:hover {
+    transform: scale(1.35);
+  }
+}
