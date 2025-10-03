@@ -44,9 +44,9 @@ const galleryData = [
     },
 
     {
-        src: './images/0104.jpeg',
-        thumbnail: './thumbnails/0104.jpeg', 
-        title: '#0104',
+        src: './images/0103.jpeg',
+        thumbnail: './thumbnails/0103.jpeg', 
+        title: '#0103',
         description: 'Oak Wood | Galloway | 2025',
     },
     {
