@@ -4,7 +4,12 @@ const galleryData = [
         src: './images/0109.jpeg',
         thumbnail: './thumbnails/0109.jpeg', 
         title: '#0109',
-        description: 'Oak Wood | Essex | 2026',
+        description: 'Oak Wood | 20x45cm | Essex | 2026',
+        theme: 'W',  // W | B | G
+        carouselImages: [
+        './images/0108.jpeg',
+        './images/1.jpeg'
+  ]
     },
     {
         src: './images/0108.jpeg',
