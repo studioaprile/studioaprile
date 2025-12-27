@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200">
+  <rect width="1600" height="1200" fill="#f4f4f4"/>
+  <g fill="none" stroke="#d9d9d9" stroke-width="6">
+    <path d="M220 920 C420 620, 560 620, 760 920"/>
+    <path d="M840 920 C1040 620, 1180 620, 1380 920"/>
+  </g>
+  <g fill="#111" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="44" opacity="0.55">
+    <text x="80" y="120">StudioAprile</text>
+    <text x="80" y="180" font-size="30" opacity="0.6">Replace with your image</text>
+  </g>
+</svg>

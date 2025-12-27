@@ -1,47 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commissions</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StudioAprile — Commission</title>
+  <meta name="description" content="Commission a StudioAprile piece." />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script defer src="./js/main.js"></script>
 </head>
 <body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <h1 class="brand-title">studioaprile</h1>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Work</a>
+        <a href="shop.html">Available</a>
+        <a href="about.html">About</a>
+        <a href="commission.html">Commission</a>
+        <a href="https://www.instagram.com/studio_aprile/" target="_blank" rel="noreferrer">Instagram</a>
+      </nav>
+    </div>
+  </header>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RBJQ1CY895"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <header>
-        <nav>
+  gtag('config', 'G-RBJQ1CY895');
+</script>
+
+  <main>
+      <div class="container">
+        <div class="page page--medium">
+          <div class="prose">
+            <h1>Commission</h1>
+           <p>
+              Studioaprile accepts a limited number of commissions each season.
+              Each piece is developed through a slow, considered process that respects
+              the nature of the wood and the intent behind the object.
+            </p>
+
+            <p>
+              Commissions may begin from a specific brief or evolve from a loose conversation
+              around use, scale, material and presence. The outcome is always a one-off piece,
+              shaped by hand and allowed to retain the marks of its making.
+            </p>
+
+            <h2>What works well</h2>
+
             <ul>
-                <li><a href="index.html">Back</a></li>
+              <li>One-off bowls and vessels</li>
+              <li>Urns, with clear constraints of size and intent</li>
+              <li>Small sets of related objects (typically 3–5 pieces)</li>
             </ul>
-        </nav>
-    </header>
 
-    <main class="commission-page">
-        <section class="commission-section">
-            <div class="commission-container">
-                <h1>Commissions</h1>
-                <p>Studioaprile offers bespoke commissions, from singular statement wood turned pieces to curated collections for designers and brands. We also work with woodland owners to transform fallen trees into meaningful sculptural pieces, preserving their essence.</p>
-                <p>If you seek a handcrafted objects tailored to your space or your fallen tree, we’d love to collaborate.</p>
-                
-                <p><strong>For commission inquiries:</strong> <a href="mailto:info@studioaprile.com">info@studioaprile.com</a></p>
+            <h2>Process</h2>
 
-                <h2>Our Process</h2>
-                <ol>
-                    <li><strong>Discovery & Consultation:</strong> We explore your vision, materials and context.</li>
-                    <li><strong>Concept & Design:</strong> A proposal with sketches, finishes and timeline.</li>
-                    <li><strong>Booking & Scheduling:</strong> A deposit secures production time.</li>
-                    <li><strong>Crafting & Progress:</strong> The piece is shaped by hand, with progress updates.</li>
-                    <li><strong>Final Review & Approval:</strong> Images shared before final refinements.</li>
-                    <li><strong>Delivery & Placement:</strong> Safe packaging with installation guidance if needed.</li>
-                </ol>
-                <p>A commission with Studioaprile is more than a transaction, it’s a process of honoring material, memory and craftsmanship. Whether preserving the essence of a meaningful tree or creating a sculptural focal point, each piece is made with deep intention, allowing the wood’s own story to emerge.</p>
-            </div>
-        </section>
+            <ol>
+              <li>Initial conversation to explore intent, context, and constraints</li>
+              <li>Material selection and rough proposal</li>
+              <li>Confirmation and production scheduling</li>
+              <li>Making, with occasional progress updates</li>
+              <li>Completion, review, and delivery</li>
+            </ol>
+
+            <p>
+              Natural movement, deformation and variation are integral to the work and are
+              not corrected or disguised. Each commissioned piece will continue to evolve
+              over time.
+            </p>
+
+            <h2>To enquire</h2>
+
+            <p>
+              Please email <a href="mailto:hello@studioaprile.com">info@studioaprile.com</a>
+              with a short description of your idea, intended use and any material preferences.
+            </p>
+          </div>
+        </div>
+      </div>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Studio Aprile. All rights reserved.</p>
-    </footer>
 
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="y"></span> StudioAprile</div>
+      <div><a href="index.html">Work</a></div>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
 </body>
 </html>

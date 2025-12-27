@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StudioAprile — Available</title>
+  <meta name="description" content="StudioAprile — available works." />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script defer src="./js/main.js"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RBJQ1CY895"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RBJQ1CY895');
+</script>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <h1 class="brand-title">studioaprile</h1>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Work</a>
+        <a href="shop.html">Available</a>
+        <a href="about.html">About</a>
+        <a href="commission.html">Commission</a>
+        <a href="https://www.instagram.com/studio_aprile/" target="_blank" rel="noreferrer">Instagram</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1 class="page-title">Available</h1>
+      <p class="page-intro">Ready pieces. Click <em>Buy</em> to checkout via Stripe.</p>
+
+      <section class="product-detail" aria-label="Available work">
+      <!-- Object 1  -->
+        <div class="product-media">
+          <img src="./assets/shop/TreeShop.jpg" alt="Urn #0102 in oak" />
+        </div>
+        <div class="product-info">
+          <h2 class="product-title">#0301-25</h2>
+
+          <p class="product-meta">
+            Beech and Walnut Wood<br>
+            Ø3cm × h6-8cm<br>
+            Herne Hill · 2025
+          </p>
+
+          <p class="product-description">
+            Little Christmas trees from naturally dried solid wood. Variations in grain, density, and drying create subtle differences from piece to piece, making each tree unique in proportion, texture and tone.
+          </p>
+
+          <div class="product-actions">
+            <a
+              class="btn btn-buy"
+              href="https://buy.stripe.com/eVqaEZ6cr7XR54C8Hp9ws01"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Buy · £ 28.00 (each)
+            </a>
+          </div>
+        </div>
+        
+        <!-- Object 2 -->
+        <div class="product-media">
+          <img src="./assets/projects/urn/0102.jpg" alt="Urn #0102 in oak" />
+        </div>
+
+        <div class="product-info">
+          <h2 class="product-title">#0102</h2>
+
+          <p class="product-meta">
+            Oak Wood<br>
+            Ø30cm × h58cm<br>
+            Tooting · 2025
+          </p>
+
+          <p class="product-description">
+            A one-of-one oak urn turned from solid wood and allowed to deform naturally
+            over time. Discrete, domestic and intentionally non-ceremonial.
+          </p>
+
+          <div class="product-actions">
+            <a
+              class="btn btn-buy"
+              href="https://buy.stripe.com/cNi00lasH4LFcx45vd9ws00"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Buy · £ 700.00
+            </a>
+          </div>
+        </div>
+        
+
+      </section>
+
+
+      <section class="note" aria-label="Shipping">
+        <h2>Shipping & returns</h2>
+        <p class="muted">UK shipping only (for now). Each piece is one-of-one. If anything arrives damaged, email me within 48 hours and I’ll make it right.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="y"></span> StudioAprile</div>
+      <div><a href="index.html">Back to work</a></div>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
