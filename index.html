@@ -1,123 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>studioaprile | woodartist | wood sculptures</title>
-  <meta name="description" content="StudioAprile — wood objects, bowls and vessels." />
-  <link rel="stylesheet" href="./css/style.css" />
-  <script defer src="./js/main.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Studioaprile — Material Recording in Wood" />
+  <meta name="author" content="Studioaprile" />
+  <title>Studioaprile - Material Recording in Wood</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RBJQ1CY895"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RBJQ1CY895');
-</script>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <h1 class="brand-title">studioaprile</h1>
-       <!--  <span class="brand-sub">Objects in wood</span> -->
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Work</a>
-        <a href="shop.html">Available</a>
-        <a href="about.html">About</a>
-        <a href="commission.html">Commission</a>
-        <a href="https://www.instagram.com/studio_aprile/" target="_blank" rel="noreferrer">Instagram</a>
-      </nav>
+  <header>
+    <div class="logo">
+      <h1>studioaprile</h1>
     </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Material Recording</a></li>
+        <li><a href="records.html">Records</a></li>
+        <li><a href="archived-research.html">Archived Research</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="commission.html">Commissions</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <div class="container">
-      <h2 class="page-title">Work</h2>
-     <p class="page-intro">Objects in wood. Ongoing series. </p> 
+  <main class="page">
+    <section>
+      <h1>Material Recording</h1>
 
-      <section class="work-deck" aria-label="Featured + projects">
-        <!-- Featured card (top, large). Point it anywhere: shop, a featured series, or a manifesto page. -->
-        <a class="project-card project-card--featured" href="./shop.html">
-          <img src="./assets/shop/Tree.jpg" alt="Featured cover" />
-          <div class="project-overlay"><div class="project-title">Latest available pieces</div></div>
-        </a>
+      <p><strong>Material Recording is an ongoing practice documenting how wood behaves under constraint, pressure and time.</strong><br>
+      Objects are produced, exposed to controlled conditions, and recorded as their material state changes.<br>
+      The work focuses on behaviour rather than form, and on observation rather than outcome.<br>
+      It is not a collection of finished objects, but a system for recording material response.</p>
 
-        <!-- 4 project cards (3:2) -->
-        <a class="project-card" href="./projects/urn.html">
-          <img src="./assets/projects/urn/CoverUrn.jpg" alt="Urn project cover" />
-          <div class="project-overlay"><div class="project-title">Urn</div></div>
-        </a>
+      <h2>Method overview</h2>
+      <ul>
+        <li><strong>Constraints</strong> Objects are produced with defined geometric and material constraints that influence stress and movement.</li>
+        <li><strong>Interventions</strong> Selected actions—structural, thermal, chemical, or surface-based—are applied to alter how the material behaves.</li>
+        <li><strong>Failure</strong> Cracking, rupture, deformation, and collapse are treated as recorded events rather than defects.</li>
+        <li><strong>State</strong> Each object is observed over time and documented as active, stable, or resolved.</li>
+      </ul>
 
-        <a class="project-card" href="./projects/wabi.html">
-          <img src="./assets/projects/wabi/CoverWabi.jpg" alt="Wabi project cover" />
-          <div class="project-overlay"><div class="project-title">Wabi</div></div>
-        </a>
+      <h2>Records</h2>
+      <p>
+        <a class="btn" href="records.html">View recorded objects →</a><br>
+        An indexed view of Material Recording entries, organised by material, failure class and state.
+      </p>
 
-        <a class="project-card" href="./projects/peak.html">
-          <img src="./assets/projects/peak/CoverPeak.jpg" alt="Peak project cover" />
-          <div class="project-overlay"><div class="project-title">Peak</div></div>
-        </a>
+      <h2>Updates</h2>
+      <p>Periodic notes on Material Recording, object states and ongoing research.</p>
+      <p><a class="btn secondary" href="https://tally.so/r/meJE6q" target="_blank" rel="noopener noreferrer">Subscribe →</a></p>
 
-        <a class="project-card" href="./projects/leaf.html">
-          <img src="./assets/projects/leaf/CoverLeaf.jpg" alt="Leaf project cover" />
-          <div class="project-overlay"><div class="project-title">Leaf</div></div>
-        </a>
-         <a class="project-card" href="./projects/stable.html">
-          <img src="./assets/projects/stable/CoverStable.jpg" alt="Stable project cover" />
-          <div class="project-overlay"><div class="project-title">Stable</div></div>
-        </a>
-
-        <a class="project-card" href="./projects/family.html">
-          <img src="./assets/projects/family/family.jpg" alt="Family project cover" />
-          <div class="project-overlay"><div class="project-title">Family</div></div>
-        </a>
-      </section>
-
-      <section class="mailing" aria-label="Mailing list">
-        <div>
-          <h2>Occasional updates</h2>
-          <p>New pieces, releases and exhibitions. No noise. No algorithms.</p>
-        </div>
-
-        <div class="embed">
-          <!--
-            TALLY EMBED
-            1) Create the form in Tally
-            2) Paste the share URL below
-            Example: https://tally.so/r/xxxxxx
-          -->
-          <iframe
-            title="Subscribe"
-            data-tally-src="https://tally.so/embed/meJE6q?alignLeft=1&hideTitle=1&transparentBackground=1"
-            loading="lazy"
-            referrerpolicy="no-referrer"
-            style="border:0; outline:0;"
-          ></iframe>
-          <script>
-            // Tally embed loader (kept inline for a single-file copy/paste)
-            (function(){
-              const src = document.querySelector('[data-tally-src]')?.getAttribute('data-tally-src');
-              if(!src || src.includes('https://tally.so/embed/meJE6q?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1E')) return;
-              const i = document.querySelector('iframe[data-tally-src]');
-              if(i) i.src = src + '?hideTitle=1&transparentBackground=1&dynamicHeight=1';
-            })();
-          </script>
-        </div>
-      </section>
-
-    </div>
+      <p class="muted">[Contextual image only. No aesthetic illustration.]</p>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="y"></span> StudioAprile</div>
-      <div><span style="color:var(--muted)">Made in Brixton | London</span></div>
-    </div>
-    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <footer>
+    <p>© 2026 Studioaprile. Contact: <a href="mailto:info@studioaprile.com">info@studioaprile.com</a></p>
   </footer>
 </body>
 </html>
