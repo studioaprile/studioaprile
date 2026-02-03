@@ -1126,3 +1126,121 @@ main h1, main h2, main h3 {
   /* media full width on mobile */
   .media-area > * { max-width: none; }
 }
+
+/* ================================
+   Typography: lighter / smaller
+   ================================ */
+
+/* Content area typography (do NOT change font-family) */
+.text-area h1,
+.content-area h1 {
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+}
+
+.text-area h2,
+.content-area h2 {
+  font-size: 13px;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+}
+
+.text-area p,
+.content-area p,
+.text-area li,
+.content-area li {
+  font-size: 13px;
+  line-height: 1.55;
+  margin: 0 0 10px 0;
+}
+
+/* Slightly calmer links in body text */
+.text-area a,
+.content-area a {
+  text-underline-offset: 2px;
+}
+
+/* ================================
+   Nav: list bullets off + button styles
+   ================================ */
+
+/* Remove bullets in nav panel (covers ul/ol) */
+.site-nav__panel ul,
+.site-nav__panel ol {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.site-nav__panel li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style burger/menu toggle like secondary button: white background, caps */
+.site-nav__toggle {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #111;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Ensure toggle is NOT visible on desktop */
+@media (min-width: 901px) {
+  .site-nav__toggle {
+    display: none !important;
+  }
+}
+
+/* Mobile: if your button currently renders black-on-black anywhere, force readable */
+@media (max-width: 900px) {
+  /* When nav is sticky on white, keep it clean */
+  .site-nav__toggle {
+    background: #fff;
+    color: #111;
+  }
+
+  /* If you have a dark header variant anywhere, make button text white */
+  .site-header.dark .site-nav__toggle,
+  .site-nav.dark .site-nav__toggle {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+  }
+}
+
+/* ================================
+   Alignment: top edges match
+   ================================ */
+
+/* Prevent extra top padding/margins inside the header column */
+.site-header h1,
+.site-header h2,
+.site-header p {
+  margin-top: 0;
+}
+
+/* Ensure the header column starts exactly at --sa-top like content/media */
+@media (min-width: 901px) {
+  .site-header {
+    padding-top: 0 !important;
+  }
+
+  /* Ensure media and text start at the same top edge */
+  .media-area,
+  .text-area,
+  .content-area {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
