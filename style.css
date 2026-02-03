@@ -830,3 +830,64 @@ main h1, main h2, main h3 {
     display: block !important;
   }
 }
+
+/* ===== Force desktop layout: media left, text right (prevents flipping) ===== */
+.page-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 420px);
+  gap: 30px;
+  align-items: start;
+  grid-template-areas: "media content";
+}
+
+.page-grid > :first-child { grid-area: media; }
+.page-grid > :last-child { grid-area: content; }
+
+/* Center media within its column */
+.media-block,
+.sa-carousel {
+  justify-self: center;
+}
+
+/* Carousel visuals */
+.sa-carousel {
+  max-width: 720px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 1px solid #ddd;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+
+.sa-carousel__track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.sa-carousel__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.sa-carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mobile stacking */
+@media (max-width: 900px) {
+  .page-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "media"
+      "content";
+  }
+  .sa-carousel {
+    max-width: none;
+  }
+}

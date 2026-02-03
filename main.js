@@ -20,11 +20,23 @@ function isNonEmpty(value) {
 
 function initCarousels() {
   const carousels = document.querySelectorAll(".sa-carousel");
+  if (!carousels.length) return;
+
   carousels.forEach((carousel) => {
+    const track = carousel.querySelector(".sa-carousel__track");
+    const slides = carousel.querySelectorAll(".sa-carousel__slide");
+    if (!track || slides.length < 2) return;
+
     const intervalMs = Number(carousel.getAttribute("data-interval")) || 1800;
     const transitionMs = Number(carousel.getAttribute("data-transition")) || 360;
-    carousel.style.setProperty("--carousel-interval", `${intervalMs}ms`);
-    carousel.style.setProperty("--carousel-transition", `${transitionMs}ms`);
+
+    let index = 0;
+    track.style.transition = `transform ${transitionMs}ms ease-in-out`;
+
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }, intervalMs);
   });
 }
 
@@ -306,7 +318,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
+  // Always initialise carousels immediately (do not depend on CSV)
   initCarousels();
+
+  // Only load CSV if the page actually contains records UI
+  const hasRecordsGrid = !!document.getElementById("records-grid");
+  const hasRecordContainer = !!document.getElementById("record-container");
+
+  if (!hasRecordsGrid && !hasRecordContainer) return;
 
   try {
     const records = await loadRecords();
@@ -318,7 +337,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const msg = `<p class="muted">Error loading records: ${safeText(e.message)}</p>`;
     if (grid) grid.innerHTML = msg;
     if (container) container.innerHTML = msg;
-    // Also log for debugging
     console.error(e);
   }
 });
