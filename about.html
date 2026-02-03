@@ -7,11 +7,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <h1>studioaprile</h1>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <div class="logo">
+        <h1>studioaprile</h1>
+      </div>
+      <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav-panel">
+        Menu
+      </button>
     </div>
-    <nav>
+    <nav class="site-nav__panel" id="site-nav-panel">
       <ul>
         <li><a href="index.html">Material Recording</a></li>
         <li><a href="records.html">Records</a></li>
@@ -22,8 +27,9 @@
     </nav>
   </header>
 
-  <main class="page">
-    <section>
+  <main class="page page-shell">
+    <div class="page-grid">
+      <section class="content-block">
       <h1>About</h1>
 
       <p>Studioaprile is the practice of <strong>Dario D’Aprile</strong>, an artist based in Brixton, South London.</p>
@@ -38,11 +44,16 @@
 
       <p>For enquiries or workshop visits:</p>
       <p><a href="mailto:info@studioaprile.com"><strong>info@studioaprile.com</strong></a></p>
-    </section>
+      </section>
+      <aside class="media-block media-1" aria-hidden="true">
+        <div class="media-tile"></div>
+      </aside>
+    </div>
   </main>
 
   <footer>
     <p>© 2026 Studioaprile. Contact: <a href="mailto:info@studioaprile.com">info@studioaprile.com</a></p>
   </footer>
+  <script src="./main.js" defer></script>
 </body>
 </html>
