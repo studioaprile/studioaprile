@@ -286,6 +286,16 @@ function renderRecordPage(records) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+  const nav = document.querySelector(".site-nav");
+  const toggle = nav ? nav.querySelector(".site-nav__toggle") : null;
+
+  if (nav && toggle) {
+    toggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+  }
+
   try {
     const records = await loadRecords();
     renderRecordsGrid(records);

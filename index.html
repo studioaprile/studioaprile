@@ -9,11 +9,16 @@
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <h1>studioaprile</h1>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <div class="logo">
+        <h1>studioaprile</h1>
+      </div>
+      <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav-panel">
+        Menu
+      </button>
     </div>
-    <nav>
+    <nav class="site-nav__panel" id="site-nav-panel">
       <ul>
         <li><a href="index.html">Material Recording</a></li>
         <li><a href="records.html">Records</a></li>
@@ -24,8 +29,9 @@
     </nav>
   </header>
 
-  <main class="page">
-    <section>
+  <main class="page page-shell">
+    <div class="page-grid">
+      <section class="content-block">
       <h1>Material Recording</h1>
 
       <p><strong>Material Recording is an ongoing practice documenting how wood behaves under constraint, pressure and time.</strong><br>
@@ -52,11 +58,16 @@
       <p><a class="btn secondary" href="https://tally.so/r/meJE6q" target="_blank" rel="noopener noreferrer">Subscribe →</a></p>
 
       <p class="muted">[Contextual image only. No aesthetic illustration.]</p>
-    </section>
+      </section>
+      <aside class="media-block media-1" aria-hidden="true">
+        <div class="media-tile"></div>
+      </aside>
+    </div>
   </main>
 
   <footer>
     <p>© 2026 Studioaprile. Contact: <a href="mailto:info@studioaprile.com">info@studioaprile.com</a></p>
   </footer>
+  <script src="./main.js" defer></script>
 </body>
 </html>

@@ -7,11 +7,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <h1>studioaprile</h1>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <div class="logo">
+        <h1>studioaprile</h1>
+      </div>
+      <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav-panel">
+        Menu
+      </button>
     </div>
-    <nav>
+    <nav class="site-nav__panel" id="site-nav-panel">
       <ul>
         <li><a href="index.html">Material Recording</a></li>
         <li><a href="records.html">Records</a></li>
@@ -22,8 +27,9 @@
     </nav>
   </header>
 
-  <main class="page">
-    <section>
+  <main class="page page-shell">
+    <div class="page-grid">
+      <section class="content-block">
       <h1>Commissions</h1>
 
       <p>Studioaprile accepts a <strong>limited number of commissions</strong> where a specific request can be addressed through the working methods of the practice.</p>
@@ -46,11 +52,16 @@
       <p>Commissioned objects will continue to evolve after completion.</p>
 
       <p>For commission enquiries, please email <a href="mailto:info@studioaprile.com"><strong>info@studioaprile.com</strong></a> with a short description of your idea, intended use, and any material preferences.</p>
-    </section>
+      </section>
+      <aside class="media-block media-1" aria-hidden="true">
+        <div class="media-tile"></div>
+      </aside>
+    </div>
   </main>
 
   <footer>
     <p>© 2026 Studioaprile. Contact: <a href="mailto:info@studioaprile.com">info@studioaprile.com</a></p>
   </footer>
+  <script src="./main.js" defer></script>
 </body>
 </html>
