@@ -721,14 +721,32 @@ main h1, main h2, main h3 {
 
 .page-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 420px);
   gap: 30px;
   align-items: start;
 }
 
 .media-block { display: grid; gap: 14px; }
 .media-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.media-1 { grid-template-columns: 1fr; max-width: 520px; }
+.media-1 { grid-template-columns: 1fr; }
+
+/* ===== Desktop alignment: media centered, text on right ===== */
+.media-block,
+.sa-carousel {
+  justify-self: center;
+}
+
+/* Ensure text is always on the right column */
+.content-block {
+  justify-self: start;
+}
+
+/* Limit media width so it reads as centered, not stretched */
+.media-block.media-1,
+.sa-carousel {
+  max-width: 720px;
+  width: 100%;
+}
 
 .media-tile {
   width: 100%;
@@ -760,7 +778,10 @@ main h1, main h2, main h3 {
 /* ===== Mobile stacking ===== */
 @media (max-width: 900px) {
   .page-grid { grid-template-columns: 1fr; }
-  .media-1 { max-width: none; }
+  .media-block.media-1,
+  .sa-carousel {
+    max-width: none;
+  }
 }
 
 /* ===== Mobile nav: drop-down that pushes content down ===== */
