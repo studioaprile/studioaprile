@@ -1244,3 +1244,45 @@ main h1, main h2, main h3 {
     padding-top: 0 !important;
   }
 }
+
+/* ===== Footer stays aligned within layout ===== */
+.site-footer {
+  margin-top: 28px;
+  padding-top: 14px;
+  border-top: 1px solid #eee;
+}
+
+/* On desktop, make footer span full width of the wrapper */
+@media (min-width: 901px) {
+  .layout-3col .site-footer,
+  .layout-2col .site-footer {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ===== Record page: never exceed 1024px for content/media ===== */
+#record-container {
+  max-width: 1024px;
+}
+
+/* Any images inside record container must never render above 1024px */
+#record-container img {
+  max-width: 1024px;
+  width: 100%;
+  height: auto;
+}
+
+/* If record page uses a specific images wrapper, also cap it */
+#record-container .record-images,
+#record-container .images,
+#record-container .gallery,
+#record-container .media,
+#record-container .media-area {
+  max-width: 1024px;
+}
+
+/* If tiles are used, ensure they don't stretch beyond 1024px */
+#record-container .media-tile,
+#record-container .image-tile {
+  max-width: 1024px;
+}
