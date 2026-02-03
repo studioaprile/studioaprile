@@ -631,3 +631,70 @@ main{ padding:38px 0 64px; }
   object-fit: cover;
   border: 1px solid #ddd;
 }
+
+.records-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.record-tile {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.record-tile-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #f2f2f2;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.record-tile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.record-tile-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+
+.record-tile-meta {
+  padding-top: 8px;
+}
+
+.record-tile-id {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.record-tile-line {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .records-tiles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .records-tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .records-tiles {
+    grid-template-columns: 1fr;
+  }
+}

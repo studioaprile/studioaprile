@@ -194,13 +194,25 @@ function renderRecordsGrid(records) {
 
   grid.innerHTML = records
     .map((r) => {
-      const materialOrigin = `${safeText(r.material)} · ${safeText(r.origin)}`;
+      const coverImage =
+        Array.isArray(r.images) && r.images.length > 0
+          ? r.images[0]
+          : "";
+
       return `
-        <a class="record-row" href="record.html?id=${encodeURIComponent(r.id)}">
-          <div class="col id">${safeText(r.id)}</div>
-          <div class="col material-origin">${materialOrigin}</div>
-          <div class="col failure">${safeText(r.failureClass)}</div>
-          <div class="col state">${safeText(r.state)}</div>
+        <a class="record-tile" href="record.html?id=${encodeURIComponent(r.id)}">
+          <div class="record-tile-image">
+            ${
+              coverImage
+                ? `<img loading="lazy" src="${coverImage}" alt="${safeText(r.id)} cover image">`
+                : `<div class="record-tile-placeholder"></div>`
+            }
+          </div>
+          <div class="record-tile-meta">
+            <div class="record-tile-id">${safeText(r.id)}</div>
+            <div class="record-tile-line">${safeText(r.material)} · ${safeText(r.origin)}</div>
+            <div class="record-tile-line">${safeText(r.failureClass)} · ${safeText(r.state)}</div>
+          </div>
         </a>
       `;
     })
