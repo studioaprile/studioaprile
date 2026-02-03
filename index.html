@@ -9,38 +9,38 @@
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <header class="site-nav">
-    <div class="site-nav__inner">
-      <div class="logo">
-        <h1>studioaprile</h1>
+  <div class="layout-3col">
+    <header class="site-header site-nav">
+      <div class="site-nav__inner">
+        <div class="logo">
+          <h1>studioaprile</h1>
+        </div>
+        <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav-panel">
+          Menu
+        </button>
       </div>
-      <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav-panel">
-        Menu
-      </button>
-    </div>
-    <nav class="site-nav__panel" id="site-nav-panel">
-      <ul>
-        <li><a href="index.html">Material Recording</a></li>
-        <li><a href="records.html">Records</a></li>
-        <li><a href="archived-research.html">Archived Research</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="commission.html">Commissions</a></li>
-      </ul>
-    </nav>
-  </header>
+      <nav class="site-nav__panel" id="site-nav-panel">
+        <ul>
+          <li><a href="index.html">Material Recording</a></li>
+          <li><a href="records.html">Records</a></li>
+          <li><a href="archived-research.html">Archived Research</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="commission.html">Commissions</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main class="page">
-    <div class="page-shell">
-      <div class="page-grid">
-        <div class="media-col">
-          <div class="sa-carousel" data-interval="1800" data-transition="360">
-            <div class="sa-carousel__track">
-              <div class="sa-carousel__slide"><img src="./images/home_01.webp" alt="Material Recording" loading="lazy"></div>
-              <div class="sa-carousel__slide"><img src="./images/home_02.webp" alt="Material Recording" loading="lazy"></div>
-              <div class="sa-carousel__slide"><img src="./images/home_03.webp" alt="Material Recording" loading="lazy"></div>
-            </div>
+    <main class="site-main">
+      <section class="media-area">
+        <div class="sa-carousel" data-interval="1800" data-transition="360">
+          <div class="sa-carousel__track">
+            <div class="sa-carousel__slide"><img src="./images/home_01.webp" alt="Material Recording" loading="lazy"></div>
+            <div class="sa-carousel__slide"><img src="./images/home_02.webp" alt="Material Recording" loading="lazy"></div>
+            <div class="sa-carousel__slide"><img src="./images/home_03.webp" alt="Material Recording" loading="lazy"></div>
           </div>
         </div>
+      </section>
+      <section class="text-area">
         <div class="content-block">
       <h1>Material Recording</h1>
 
@@ -69,9 +69,9 @@
 
       <p class="muted">[Contextual image only. No aesthetic illustration.]</p>
         </div>
-      </div>
-    </div>
-  </main>
+      </section>
+    </main>
+  </div>
 
   <footer>
     <p>© 2026 Studioaprile. Contact: <a href="mailto:info@studioaprile.com">info@studioaprile.com</a></p>

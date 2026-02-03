@@ -309,12 +309,11 @@ function renderRecordPage(records) {
 
 document.addEventListener("DOMContentLoaded", async () => {
   const nav = document.querySelector(".site-nav");
-  const toggle = nav ? nav.querySelector(".site-nav__toggle") : null;
-
-  if (nav && toggle) {
-    toggle.addEventListener("click", () => {
-      const isOpen = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", String(isOpen));
+  const btn = document.querySelector(".site-nav__toggle");
+  if (nav && btn) {
+    btn.addEventListener("click", () => {
+      const open = nav.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
     });
   }
 
