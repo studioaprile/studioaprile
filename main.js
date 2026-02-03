@@ -18,6 +18,16 @@ function isNonEmpty(value) {
   return String(value).trim().length > 0;
 }
 
+function initCarousels() {
+  const carousels = document.querySelectorAll(".sa-carousel");
+  carousels.forEach((carousel) => {
+    const intervalMs = Number(carousel.getAttribute("data-interval")) || 1800;
+    const transitionMs = Number(carousel.getAttribute("data-transition")) || 360;
+    carousel.style.setProperty("--carousel-interval", `${intervalMs}ms`);
+    carousel.style.setProperty("--carousel-transition", `${transitionMs}ms`);
+  });
+}
+
 // Parse Notion "February 3, 2026 12:05 AM" safely.
 // Use for sorting only.
 function parseNotionDate(dateStr) {
@@ -295,6 +305,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       toggle.setAttribute("aria-expanded", String(isOpen));
     });
   }
+
+  initCarousels();
 
   try {
     const records = await loadRecords();
