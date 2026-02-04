@@ -61,33 +61,28 @@
 
       <h2>Updates</h2>
       <p>Periodic notes on Material Recording, object states and ongoing research.</p>
-      <form action="https://studioaprile.com/subscribe/submit/" method="POST" class="subscribe">
-        <div class="subscribe__row">
-          <label class="sr-only" for="subscribe-email">Email</label>
-          <input
-            id="subscribe-email"
-            name="email"
-            type="email"
-            required
-            autocomplete="email"
-            placeholder="Email"
-          />
+      <form action="/api/subscribe" method="POST">
+        <input
+          type="email"
+          name="email"
+          placeholder="Email address"
+          required
+          autocomplete="email"
+        />
 
-          <input type="hidden" name="source" value="home" />
+        <input type="hidden" name="source" value="home" />
 
-          <!-- honeypot -->
-          <div class="hp" style="position:absolute; left:-9999px;" aria-hidden="true">
-            <label>
-              Company
-              <input name="company" tabindex="-1" autocomplete="off" />
-            </label>
-          </div>
+        <!-- honeypot -->
+        <input type="text" name="company" tabindex="-1" autocomplete="off" />
 
-          <button type="submit">Subscribe</button>
-        </div>
-
-        <p class="subscribe__note">Occasional notes. No spam.</p>
+        <button type="submit" class="btn btn-secondary">
+          Subscribe
+        </button>
       </form>
+
+      <div class="subscribe-fine">
+        You can unsubscribe at any time.
+      </div>
         </div>
       </section>
     </main>

@@ -1286,3 +1286,74 @@ main h1, main h2, main h3 {
 #record-container .image-tile {
   max-width: 1024px;
 }
+
+/* =========================================
+   Subscribe form (Cloudflare Worker)
+   Targets form[action="/api/subscribe"]
+   ========================================= */
+
+.text-area form[action="/api/subscribe"] {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.text-area form[action="/api/subscribe"] input[name="email"] {
+  flex: 1;
+  min-width: 180px;
+  font-size: 13px;
+  line-height: 1.4;
+  padding: 9px 11px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.text-area form[action="/api/subscribe"] input[name="email"]:focus {
+  outline: none;
+  border-color: #111;
+}
+
+.text-area form[action="/api/subscribe"] button[type="submit"] {
+  white-space: nowrap;
+}
+
+/* hide honeypot */
+.text-area form[action="/api/subscribe"] input[name="company"] {
+  display: none !important;
+}
+
+.subscribe-fine {
+  margin-top: 6px;
+  font-size: 12px;
+  opacity: 0.65;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .text-area form[action="/api/subscribe"] {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .text-area form[action="/api/subscribe"] button {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   Thanks page
+   ========================================= */
+
+.content-block.thanks {
+  max-width: 420px;
+}
+
+.content-block.thanks h1 {
+  margin-bottom: 6px;
+}
+
+.content-block.thanks p {
+  margin-bottom: 14px;
+}
