@@ -65,7 +65,33 @@
 
       <h2>Updates</h2>
       <p>Periodic notes on Material Recording, object states and ongoing research.</p>
-      <p><a class="btn secondary" href="https://tally.so/r/meJE6q" target="_blank" rel="noopener noreferrer">Subscribe →</a></p>
+      <form action="https://studioaprile.com/subscribe/submit/" method="POST" class="subscribe">
+        <div class="subscribe__row">
+          <label class="sr-only" for="subscribe-email">Email</label>
+          <input
+            id="subscribe-email"
+            name="email"
+            type="email"
+            required
+            autocomplete="email"
+            placeholder="Email"
+          />
+
+          <input type="hidden" name="source" value="home" />
+
+          <!-- honeypot -->
+          <div class="hp" style="position:absolute; left:-9999px;" aria-hidden="true">
+            <label>
+              Company
+              <input name="company" tabindex="-1" autocomplete="off" />
+            </label>
+          </div>
+
+          <button type="submit">Subscribe</button>
+        </div>
+
+        <p class="subscribe__note">Occasional notes. No spam.</p>
+      </form>
         </div>
       </section>
     </main>
