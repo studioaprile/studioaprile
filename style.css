@@ -1286,39 +1286,3 @@ main h1, main h2, main h3 {
 #record-container .image-tile {
   max-width: 1024px;
 }
-
-/* ===== Subscribe (home) — quiet embed ===== */
-.subscribe {
-  font-size: 13px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin: 18px 0 6px 0;
-}
-
-.subscribe-copy {
-  font-size: 13px;
-  margin: 0 0 10px 0;
-  opacity: 0.85;
-}
-
-/* container with a subtle top rule, no heavy box */
-.subscribe-embed {
-  margin-top: 10px;
-  padding-top: 12px;
-  border-top: 1px solid #eee;
-}
-
-/* make iframe blend in and not look like a widget */
-.subscribe-embed iframe {
-  width: 100%;
-  height: 240px;           /* quiet + compact; adjust only if Tally needs more */
-  border: 0;
-  background: transparent;
-}
-
-/* Mobile: slightly taller if needed */
-@media (max-width: 900px) {
-  .subscribe-embed iframe {
-    height: 260px;
-  }
-}
