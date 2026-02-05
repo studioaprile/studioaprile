@@ -1,71 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>StudioAprile — About</title>
-  <meta name="description" content="About StudioAprile." />
-  <link rel="stylesheet" href="./css/style.css" />
-  <script defer src="./js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studioaprile - About</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <h1 class="brand-title">studioaprile</h1>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Work</a>
-        <a href="shop.html">Available</a>
-        <a href="about.html">About</a>
-        <a href="commission.html">Commission</a>
-        <a href="https://www.instagram.com/studio_aprile/" target="_blank" rel="noreferrer">Instagram</a>
-      </nav>
-    </div>
-  </header>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RBJQ1CY895"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RBJQ1CY895');
-</script>
-
-<main>
-    <div class="container">
-      <div class="page page--medium">
-        <section class="about-split" aria-label="About StudioAprile">
-          <figure class="about-photo">
-            <img src="./assets/ui/IMG_0230.jpeg" alt="Dario D'Aprile" />
-          </figure>
-
-          <div class="about-copy">
-            <h1>About</h1>
-            <p>Studioaprile is the practice of Dario D’Aprile, an artist and maker based in Brixton, South London.
-The work investigates material behaviour under stress, loss of control, and time-based change.
-
-Objects are produced through defined protocols rather than fixed outcomes. Wood is pushed beyond structural tolerance, allowed to deform, crack, or fail, and documented without corrective intervention. Each piece is presented as a material record of a specific condition rather than a resolved form.
-
-Trained in design, D’Aprile began his career as a photographer and visual artist, exhibiting internationally. After two decades working in technology, he returned to making in 2023, training as a carpenter before moving into sculptural turning and material experimentation.
-
-The practice centres on unstabilised, often reclaimed timber. Change is not arrested unless specified by the protocol. Cracking, distortion, and instability are treated as outcomes rather than defects.
-
-Influenced by wabi-sabi, but operating through a contemporary, process-led lens, Studioaprile’s work exists between craft, sculpture, and material research. Objects continue to evolve after making, and their final state is not predetermined.</p>
-          </div>
-        </section>
+  <div class="layout-3col">
+    <header class="site-header site-nav">
+      <div class="site-nav__inner">
+        <div class="logo">
+          <h1>studioaprile</h1>
+        </div>
+        <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav-panel">
+          Menu
+        </button>
       </div>
-    </div>
-  </main>
+      <nav class="site-nav__panel" id="site-nav-panel">
+        <ul>
+          <li><a href="index.html">Material Recording</a></li>
+          <li><a href="records.html">Records</a></li>
+          <li><a href="archived-research.html">Archived Research</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="commission.html">Commissions</a></li>
+        </ul>
+      </nav>
+    </header>
 
+    <main class="site-main">
+      <section class="media-area">
+        <div class="media-image">
+          <img src="./images/about_01.webp" alt="Studioaprile" loading="lazy">
+        </div>
+      </section>
+      <section class="text-area">
+        <div class="content-block">
+      <h1>About</h1>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="y"></span> StudioAprile</div>
-      <div><a href="index.html">Work</a></div>
-    </div>
-    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+      <p>Studioaprile is the practice of <strong>Dario D’Aprile</strong>, an artist based in Brixton, South London.</p>
+
+      <p>The work is structured around Material Recording, an ongoing practice documenting how wood behaves under constraint, pressure, and time.</p>
+
+      <p>D’Aprile’s work spanned photography, visual art, and sculptural research. He holds a master’s degree in design and has exhibited internationally. Earlier projects examined spatial perception, landscape and human–environment relationships, providing the groundwork for later investigations into material systems and constraint.</p>
+
+      <p>Alongside his artistic practice, D’Aprile spent over two decades working in technology and product development. This background informs the procedural structure, documentation logic and system-based approach that underpin Material Recording.</p>
+
+      <p>Studioaprile operates as a working practice rather than a studio brand, with research, production and documentation taking place in parallel.</p>
+
+      <p>For enquiries or workshop visits:</p>
+      <p><a href="mailto:info@studioaprile.com"><strong>info@studioaprile.com</strong></a></p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+    <p>© 2026 Studioaprile. Contact: <a href="mailto:info@studioaprile.com">info@studioaprile.com</a></p>
   </footer>
+  </div>
+  <script src="./main.js" defer></script>
 </body>
 </html>

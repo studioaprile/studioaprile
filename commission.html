@@ -1,97 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>StudioAprile — Commission</title>
-  <meta name="description" content="Commission a StudioAprile piece." />
-  <link rel="stylesheet" href="./css/style.css" />
-  <script defer src="./js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studioaprile - Commissions</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <h1 class="brand-title">studioaprile</h1>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Work</a>
-        <a href="shop.html">Available</a>
-        <a href="about.html">About</a>
-        <a href="commission.html">Commission</a>
-        <a href="https://www.instagram.com/studio_aprile/" target="_blank" rel="noreferrer">Instagram</a>
-      </nav>
-    </div>
-  </header>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RBJQ1CY895"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RBJQ1CY895');
-</script>
-
-  <main>
-      <div class="container">
-        <div class="page page--medium">
-          <div class="prose">
-            <h1>Commission</h1>
-           <p>
-              Studioaprile accepts a limited number of commissions each season.
-              Each piece is developed through a slow, considered process that respects
-              the nature of the wood and the intent behind the object.
-            </p>
-
-            <p>
-              Commissions may begin from a specific brief or evolve from a loose conversation
-              around use, scale, material and presence. The outcome is always a one-off piece,
-              shaped by hand and allowed to retain the marks of its making.
-            </p>
-
-            <h2>What works well</h2>
-
-            <ul>
-              <li>One-off bowls and vessels</li>
-              <li>Urns, with clear constraints of size and intent</li>
-              <li>Small sets of related objects (typically 3–5 pieces)</li>
-            </ul>
-
-            <h2>Process</h2>
-
-            <ol>
-              <li>Initial conversation to explore intent, context, and constraints</li>
-              <li>Material selection and rough proposal</li>
-              <li>Confirmation and production scheduling</li>
-              <li>Making, with occasional progress updates</li>
-              <li>Completion, review, and delivery</li>
-            </ol>
-
-            <p>
-              Natural movement, deformation and variation are integral to the work and are
-              not corrected or disguised. Each commissioned piece will continue to evolve
-              over time.
-            </p>
-
-            <h2>To enquire</h2>
-
-            <p>
-              Please email <a href="mailto:hello@studioaprile.com">info@studioaprile.com</a>
-              with a short description of your idea, intended use and any material preferences.
-            </p>
-          </div>
+  <div class="layout-3col">
+    <header class="site-header site-nav">
+      <div class="site-nav__inner">
+        <div class="logo">
+          <h1>studioaprile</h1>
         </div>
+        <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav-panel">
+          Menu
+        </button>
       </div>
+      <nav class="site-nav__panel" id="site-nav-panel">
+        <ul>
+          <li><a href="index.html">Material Recording</a></li>
+          <li><a href="records.html">Records</a></li>
+          <li><a href="archived-research.html">Archived Research</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="commission.html">Commissions</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <section class="media-area">
+        <div class="media-image">
+          <img src="./images/commission_01.webp" alt="Commission" loading="lazy">
+        </div>
+      </section>
+      <section class="text-area">
+        <div class="content-block">
+      <h1>Commissions</h1>
+
+      <p>Studioaprile accepts a limited number of commissions where a specific request can be addressed through the working methods of the practice.</p>
+
+      <p>Commissioned works are developed slowly and under defined constraints, using primarily fallen or reclaimed wood sourced through local recovery rather than commercial supply. Material availability, condition, and prior stress histories are treated as active variables, and directly influence form, behaviour, and outcome.</p>
+
+      <p>Commissions may take the form of single bowls, vessels, urns or small groups of related objects with clearly defined size and intent. While a commission may begin from a functional requirement or contextual brief, the final form is not pre-designed. Objects are produced, exposed to controlled conditions and allowed to retain movement, deformation and surface change over time.</p>
+
+      <p>The outcome is always a one-off object shaped by material response rather than optimisation or finish. Variation, cracking and irregularity are integral to the work and are neither corrected nor disguised.</p>
+
+      <h2>Process</h2>
+      <ul>
+        <li>An initial conversation to clarify intent, context, and constraints</li>
+        <li>Material selection and a rough proposal based on availability</li>
+        <li>Confirmation and production scheduling</li>
+        <li>Making, with limited progress updates</li>
+        <li>Completion, review, and delivery</li>
+      </ul>
+
+      <p>Commissioned objects will continue to evolve after completion.</p>
+
+      <p>For commission enquiries, please email <a href="mailto:info@studioaprile.com"><strong>info@studioaprile.com</strong></a> with a short description of your idea, intended use and any material preferences.</p>
+        </div>
+      </section>
     </main>
-
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="y"></span> StudioAprile</div>
-      <div><a href="index.html">Work</a></div>
-    </div>
-    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+    <footer class="site-footer">
+    <p>© 2026 Studioaprile. Contact: <a href="mailto:info@studioaprile.com">info@studioaprile.com</a></p>
   </footer>
+  </div>
+  <script src="./main.js" defer></script>
 </body>
 </html>
