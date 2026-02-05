@@ -1,3 +1,16 @@
+# Project Lock (v3) — Canonical Rules
+
+- Site type: static site
+- Records source: `/data/records.csv` exported from Notion
+- Record images location: `/images/` with naming `MR-YY-XX.webp` + suffixes
+- Page media filenames: `home_01..03`, `archive_01..03`, `about_01`, `commission_01`
+- Subscribe form: serverless (Cloudflare Worker + MailerSend), CSS-only styling
+- Thanks page path: `/thanks/index.html` -> `https://studioaprile.com/thanks/`
+- Max render for individual record images: 1024px
+- Footer must remain inside layout wrappers
+- Layout system: static pages = 3 columns (Header | Media | Text), records pages = 2 columns (Header | Content)
+- No HTML changes to subscribe form without backend review
+
 # Studioaprile — Website v3 (Material Recording)
 
 This repository contains the **Studioaprile website (v3)**.
