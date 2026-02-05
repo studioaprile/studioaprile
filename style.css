@@ -1357,3 +1357,76 @@ main h1, main h2, main h3 {
 .content-block.thanks p {
   margin-bottom: 14px;
 }
+
+/* ================================
+   Home subscribe form — scoped + quiet
+   ================================ */
+.subscribe {
+  /* keep spacing controlled and consistent */
+  margin-top: 10px;
+}
+
+.subscribe .subscribe__row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+/* Hide honeypot reliably */
+.subscribe .hp {
+  display: none !important;
+}
+
+/* Input styling: inherit site typography + minimal borders */
+.subscribe input[name="email"] {
+  flex: 1;
+  min-width: 180px;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.4;
+  padding: 9px 11px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+}
+
+.subscribe input[name="email"]::placeholder {
+  opacity: 0.6;
+}
+
+/* Quiet focus state */
+.subscribe input[name="email"]:focus {
+  outline: none;
+  border-color: #111;
+}
+
+/* Button: keep existing .btn styles if present; only ensure it doesn’t break layout */
+.subscribe .subscribe__row .btn,
+.subscribe button[type="submit"],
+.subscribe input[type="submit"] {
+  white-space: nowrap;
+}
+
+/* Note text: smaller + subdued */
+.subscribe .subscribe__note {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.45;
+  opacity: 0.65;
+}
+
+/* Mobile: stack */
+@media (max-width: 900px) {
+  .subscribe .subscribe__row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .subscribe .subscribe__row .btn,
+  .subscribe button[type="submit"],
+  .subscribe input[type="submit"] {
+    width: 100%;
+  }
+}
