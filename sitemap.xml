@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>/index.html</loc></url>
-  <url><loc>/about.html</loc></url>
-  <url><loc>/shop.html</loc></url>
-  <url><loc>/commission.html</loc></url>
-  <url><loc>/projects/urns.html</loc></url>
-  <url><loc>/projects/wabi-sabi.html</loc></url>
-  <url><loc>/projects/peaks.html</loc></url>
-  <url><loc>/projects/stable.html</loc></url>
+
+  <url>
+    <loc>https://studioaprile.com/</loc>
+  </url>
+
+  <url>
+    <loc>https://studioaprile.com/records.html</loc>
+  </url>
+
+  <url>
+    <loc>https://studioaprile.com/about.html</loc>
+  </url>
+
+  <url>
+    <loc>https://studioaprile.com/archived-research.html</loc>
+  </url>
+
+  <url>
+    <loc>https://studioaprile.com/commission.html</loc>
+  </url>
+
+  <url>
+    <loc>https://studioaprile.com/thanks/</loc>
+  </url>
+
+  <url>
+    <loc>https://studioaprile.com/shop.html</loc>
+  </url>
+
 </urlset>
