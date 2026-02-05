@@ -1514,3 +1514,44 @@ main h1, main h2, main h3 {
 .subscribe .subscribe__note {
   margin-top: 4px;
 }
+
+/* =========================================
+   Mobile spacing: media -> first heading
+   ========================================= */
+@media (max-width: 900px) {
+  /* Add spacing below the media block (image/carousel) */
+  .media-area {
+    margin-bottom: 14px;
+  }
+
+  /* Ensure the first heading in the text column never sticks to the media */
+  .text-area h1:first-child,
+  .text-area .content-block > h1:first-child {
+    margin-top: 10px;
+  }
+}
+
+/* =========================================
+   Subscribe form: force equal heights (scoped)
+   ========================================= */
+.subscribe .subscribe__row input[name="email"] {
+  height: 38px !important;
+  padding: 0 11px !important;
+  box-sizing: border-box !important;
+  line-height: 38px !important;
+}
+
+.subscribe .subscribe__row button,
+.subscribe .subscribe__row input[type="submit"] {
+  height: 38px !important;
+  padding: 0 12px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+}
+
+/* If any global button reset is shrinking it, keep it stable */
+.subscribe .subscribe__row button {
+  min-height: 38px !important;
+}
