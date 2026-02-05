@@ -1430,3 +1430,38 @@ main h1, main h2, main h3 {
     width: 100%;
   }
 }
+
+/* =================================
+   Fix subscribe button styling
+   (scoped, higher specificity)
+   ================================= */
+
+/* Force button to use site secondary style inside subscribe form */
+.subscribe .subscribe__row button,
+.subscribe .subscribe__row .btn,
+.subscribe .subscribe__row input[type="submit"] {
+  background: #111;
+  color: #fff;
+  border: 1px solid #111;
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Hover state – subtle */
+.subscribe .subscribe__row button:hover,
+.subscribe .subscribe__row .btn:hover,
+.subscribe .subscribe__row input[type="submit"]:hover {
+  opacity: 0.9;
+}
+
+/* Ensure no reset wipes it out */
+.subscribe .subscribe__row button:focus {
+  outline: none;
+}
+
+/* Mobile full-width already handled elsewhere */
