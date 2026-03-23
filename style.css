@@ -1574,6 +1574,7 @@ main h1, main h2, main h3 {
    ========================================= */
 .logo {
   line-height: 1;
+  margin-bottom: 24px;
 }
 
 .logo__link {
