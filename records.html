@@ -33,13 +33,13 @@
     <header class="site-header site-nav">
       <div class="site-nav__inner">
         <div class="logo">
-          <h1>studioaprile</h1>
+          <a class="logo__link" href="index.html">studioaprile</a>
         </div>
         <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav-panel">
           Menu
         </button>
       </div>
-      <nav class="site-nav__panel" id="site-nav-panel">
+      <nav class="site-nav__panel" id="site-nav-panel" aria-label="Primary">
         <ul>
           <li><a href="index.html">Material Recording</a></li>
           <li><a href="records.html">Records</a></li>
@@ -51,10 +51,13 @@
     </header>
 
     <main class="site-main">
-      <section class="content-area">
-        <h1>Records</h1>
+      <section class="content-area" aria-labelledby="records-title">
+        <h1 id="records-title">Records</h1>
+        <p>A selection of recorded wood objects documenting material state, failure and change over time.</p>
 
-        <div id="records-grid" class="records-tiles"></div>
+        <section class="records-section" aria-label="Recorded objects">
+          <ul id="records-grid" class="records-tiles"></ul>
+        </section>
       </section>
     </main>
     <footer class="site-footer">

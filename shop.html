@@ -1,123 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>StudioAprile — Available</title>
-  <meta name="description" content="StudioAprile — available works." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Available Studio Aprile works presented as a static page within the Material Recording site structure.">
+  <title>Available Works | Studio Aprile</title>
   <link rel="canonical" href="https://studioaprile.com/shop.html" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <script defer src="./js/main.js"></script>
+  <link rel="stylesheet" href="./style.css" />
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RBJQ1CY895"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RBJQ1CY895');
-</script>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <h1 class="brand-title">studioaprile</h1>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Work</a>
-        <a href="shop.html">Available</a>
-        <a href="about.html">About</a>
-        <a href="commission.html">Commission</a>
-        <a href="https://www.instagram.com/studio_aprile/" target="_blank" rel="noreferrer">Instagram</a>
+  <div class="layout-3col">
+    <header class="site-header site-nav">
+      <div class="site-nav__inner">
+        <div class="logo">
+          <a class="logo__link" href="index.html">studioaprile</a>
+        </div>
+      </div>
+      <nav class="site-nav__panel site-nav__panel--static" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Material Recording</a></li>
+          <li><a href="records.html">Records</a></li>
+          <li><a href="archived-research.html">Archived Research</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="commission.html">Commissions</a></li>
+          <li><a href="shop.html" aria-current="page">Available</a></li>
+        </ul>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <div class="container">
-      <h1 class="page-title">Available</h1>
-      <p class="page-intro">Ready pieces. Click <em>Buy</em> to checkout via Stripe.</p>
-
-      <section class="product-detail" aria-label="Available work">
-      <!-- Object 1  -->
-        <div class="product-media">
-          <img src="./assets/shop/TreeShop.jpg" alt="Urn #0102 in oak" />
+    <main class="site-main">
+      <section class="media-area">
+        <div class="media-image">
+          <img src="./assets/shop/TreeShop.jpg" alt="Available Studio Aprile beech and walnut wood object" loading="lazy">
         </div>
-        <div class="product-info">
-          <h2 class="product-title">#0301-25</h2>
-
-          <p class="product-meta">
-            Beech and Walnut Wood<br>
-            Ø3cm × h6-8cm<br>
-            Herne Hill · 2025
-          </p>
-
-          <p class="product-description">
-            Little Christmas trees from naturally dried solid wood. Variations in grain, density, and drying create subtle differences from piece to piece, making each tree unique in proportion, texture and tone.
-          </p>
-
-          <div class="product-actions">
-            <a
-              class="btn btn-buy"
-              href="https://buy.stripe.com/eVqaEZ6cr7XR54C8Hp9ws01"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Buy · £ 28.00 (each)
-            </a>
-          </div>
-        </div>
-        
-        <!-- Object 2 -->
-        <div class="product-media">
-          <img src="./assets/projects/urn/0102.jpg" alt="Urn #0102 in oak" />
-        </div>
-
-        <div class="product-info">
-          <h2 class="product-title">#0102</h2>
-
-          <p class="product-meta">
-            Oak Wood<br>
-            Ø30cm × h58cm<br>
-            Tooting · 2025
-          </p>
-
-          <p class="product-description">
-            A one-of-one oak urn turned from solid wood and allowed to deform naturally
-            over time. Discrete, domestic and intentionally non-ceremonial.
-          </p>
-
-          <div class="product-actions">
-            <a
-              class="btn btn-buy"
-              href="https://buy.stripe.com/cNi00lasH4LFcx45vd9ws00"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Buy · £ 700.00
-            </a>
-          </div>
-        </div>
-        
-
       </section>
+      <section class="text-area">
+        <div class="content-block">
+          <h1>Available Works</h1>
+          <p>This page lists Studio Aprile works that are currently available as static entries, using the same layout and typographic system as the rest of the site.</p>
 
+          <h2>Current availability</h2>
+          <p><strong>#0301-25</strong><br>
+          Beech and walnut wood<br>
+          Approx. Ø3cm × h6–8cm<br>
+          Herne Hill · 2025</p>
 
-      <section class="note" aria-label="Shipping">
-        <h2>Shipping & returns</h2>
-        <p class="muted">UK shipping only (for now). Each piece is one-of-one. If anything arrives damaged, email me within 48 hours and I’ll make it right.</p>
+          <p>Small turned tree forms produced from naturally dried solid wood. Variations in grain, density and drying create subtle differences in proportion, surface and tone, so each piece remains materially distinct.</p>
+
+          <h2>How to enquire</h2>
+          <p>Availability is handled directly by email rather than through a cart or automated checkout.</p>
+          <p>For purchase enquiries, please contact <a href="mailto:info@studioaprile.com"><strong>info@studioaprile.com</strong></a> and include the work reference above.</p>
+
+          <h2>Shipping</h2>
+          <p>Shipping, collection and delivery timings are confirmed individually at the point of enquiry.</p>
+        </div>
       </section>
-
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="y"></span> StudioAprile</div>
-      <div><a href="index.html">Back to work</a></div>
-    </div>
-    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-  </footer>
+    </main>
+    <footer class="site-footer">
+      <p>© 2026 Studioaprile. Contact: <a href="mailto:info@studioaprile.com">info@studioaprile.com</a></p>
+    </footer>
+  </div>
 </body>
 </html>

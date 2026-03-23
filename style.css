@@ -637,6 +637,8 @@ main{ padding:38px 0 64px; }
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
   margin-top: 24px;
+  padding: 0;
+  list-style: none;
 }
 
 .record-tile {
@@ -1202,6 +1204,17 @@ main h1, main h2, main h3 {
   }
 }
 
+.site-nav__panel--static {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .site-nav__panel--static {
+    display: block;
+    padding-bottom: 10px;
+  }
+}
+
 /* Mobile: if your button currently renders black-on-black anywhere, force readable */
 @media (max-width: 900px) {
   /* When nav is sticky on white, keep it clean */
@@ -1554,4 +1567,53 @@ main h1, main h2, main h3 {
 /* If any global button reset is shrinking it, keep it stable */
 .subscribe .subscribe__row button {
   min-height: 38px !important;
+}
+
+/* =========================================
+   Semantic SEO support
+   ========================================= */
+.logo {
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.logo__link {
+  display: inline-block;
+  font-size: 32px;
+  line-height: 1;
+  font-family: 'Falster', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.record-tile-link {
+  display: block;
+}
+
+.record-tile-image {
+  margin: 0;
+}
+
+.record-tile-id,
+.record-tile-line,
+.record-figure,
+.meta-val {
+  margin: 0;
+}
+
+.meta-list {
+  margin: 0;
 }
