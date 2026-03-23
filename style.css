@@ -1204,6 +1204,17 @@ main h1, main h2, main h3 {
   }
 }
 
+.site-nav__panel--static {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .site-nav__panel--static {
+    display: block;
+    padding-bottom: 10px;
+  }
+}
+
 /* Mobile: if your button currently renders black-on-black anywhere, force readable */
 @media (max-width: 900px) {
   /* When nav is sticky on white, keep it clean */
