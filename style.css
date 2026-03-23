@@ -1555,3 +1555,47 @@ main h1, main h2, main h3 {
 .subscribe .subscribe__row button {
   min-height: 38px !important;
 }
+
+/* =========================================
+   Semantic SEO support
+   ========================================= */
+.logo {
+  line-height: 1;
+}
+
+.logo__link {
+  display: inline-block;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.record-tile-link {
+  display: block;
+}
+
+.record-tile-image {
+  margin: 0;
+}
+
+.record-tile-id,
+.record-tile-line,
+.record-figure,
+.meta-val {
+  margin: 0;
+}
+
+.meta-list {
+  margin: 0;
+}

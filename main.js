@@ -50,6 +50,83 @@ function parseNotionDate(dateStr) {
   return new Date(t);
 }
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function normaliseRecordId(value) {
+  return String(value || "")
+    .trim()
+    .replace(/\s+/g, "")
+    .toUpperCase();
+}
+
+function formatRecordYear(date) {
+  if (!(date instanceof Date) || Number.isNaN(date.getTime()) || date.getTime() === 0) {
+    return "";
+  }
+
+  return String(date.getFullYear());
+}
+
+function buildRecordAlt(record) {
+  const year = formatRecordYear(record.recordDateSort);
+  const lead = isNonEmpty(record.material)
+    ? `${safeText(record.material, "Wood")} sculptural wood object by Studio Aprile`
+    : "Sculptural wood object by Studio Aprile";
+
+  const qualifiers = [record.origin, year, record.dimension]
+    .map((part) => String(part || "").trim())
+    .filter(Boolean);
+
+  return [lead, ...qualifiers].join(", ");
+}
+
+function buildRecordImageAlt(record, index) {
+  const viewLabel = Array.isArray(record.images) && record.images.length > 1 ? `, view ${index + 1}` : "";
+  return `${record.alt}${viewLabel}`;
+}
+
+function updateRecordSeo(record) {
+  if (!record) return;
+
+  const year = formatRecordYear(record.recordDateSort);
+  const titleParts = [record.id];
+
+  if (isNonEmpty(record.material)) titleParts.push(record.material);
+  titleParts.push("Studio Aprile");
+  document.title = titleParts.join(" | ");
+
+  const descriptionParts = [
+    `${record.id} is a recorded wood object by Studio Aprile.`,
+    [record.material, record.origin, year].filter(Boolean).join(", "),
+    [record.failureClass !== "—" ? record.failureClass : "", record.state].filter(Boolean).join(" · ")
+  ].filter(Boolean);
+
+  const description = descriptionParts.join(" ");
+
+  let metaDescription = document.querySelector('meta[name="description"]');
+  if (!metaDescription) {
+    metaDescription = document.createElement("meta");
+    metaDescription.setAttribute("name", "description");
+    document.head.appendChild(metaDescription);
+  }
+  metaDescription.setAttribute("content", description);
+
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute("href", `https://studioaprile.com/record.html?id=${encodeURIComponent(record.id)}`);
+}
+
 // Minimal CSV parser supporting quoted fields.
 function parseCSV(text) {
   const rows = [];
@@ -61,7 +138,7 @@ function parseCSV(text) {
     const ch = text[i];
     const next = text[i + 1];
 
-    if (ch === '"' ) {
+    if (ch === '"') {
       if (inQuotes && next === '"') {
         // Escaped quote
         cur += '"';
@@ -103,7 +180,7 @@ function parseCSV(text) {
 // Map header -> value
 function rowsToObjects(rows) {
   if (!rows.length) return [];
-  const headers = rows[0].map(h => String(h || "").trim());
+  const headers = rows[0].map((h) => String(h || "").trim());
   const objects = [];
 
   for (let i = 1; i < rows.length; i++) {
@@ -111,12 +188,12 @@ function rowsToObjects(rows) {
     if (!r || !r.length) continue;
 
     // Skip totally empty rows
-    const hasAny = r.some(cell => String(cell || "").trim().length > 0);
+    const hasAny = r.some((cell) => String(cell || "").trim().length > 0);
     if (!hasAny) continue;
 
     const obj = {};
     for (let j = 0; j < headers.length; j++) {
-      obj[headers[j]] = (r[j] !== undefined ? String(r[j]).trim() : "");
+      obj[headers[j]] = r[j] !== undefined ? String(r[j]).trim() : "";
     }
     objects.push(obj);
   }
@@ -133,9 +210,9 @@ function normaliseImages(imagesCell) {
   const raw = String(imagesCell || "").trim();
   if (!raw) return [];
 
-  const parts = raw.split(",").map(p => p.trim()).filter(Boolean);
+  const parts = raw.split(",").map((p) => p.trim()).filter(Boolean);
 
-  return parts.map(p => {
+  return parts.map((p) => {
     // remove query strings/fragments
     const noQS = p.split("?")[0].split("#")[0];
 
@@ -153,7 +230,7 @@ function normaliseImages(imagesCell) {
 function mapNotionRowToRecord(o) {
   // Expect these headers (exact from Notion export):
   // ID, Images, RecordDate, Material, Origin, Failure Class, State, etc.
-  const id = o["ID"] || o["Id"] || o["id"] || "";
+  const id = normaliseRecordId(o["ID"] || o["Id"] || o["id"] || "");
   const recordDateRaw = o["RecordDate"] || o["Record Date"] || o["recordDate"] || "";
   const material = o["Material"] || "";
   const origin = o["Origin"] || "";
@@ -161,12 +238,13 @@ function mapNotionRowToRecord(o) {
   const state = o["State"] || "";
 
   const images = normaliseImages(o["Images"] || o["Image"] || "");
+  const recordDateSort = parseNotionDate(recordDateRaw);
 
-  return {
+  const record = {
     // required for grid + routing
-    id: id,
-    recordDateRaw: recordDateRaw,
-    recordDateSort: parseNotionDate(recordDateRaw),
+    id,
+    recordDateRaw,
+    recordDateSort,
 
     // grid fields
     material,
@@ -186,6 +264,10 @@ function mapNotionRowToRecord(o) {
 
     images
   };
+
+  record.alt = buildRecordAlt(record);
+
+  return record;
 }
 
 async function loadRecords() {
@@ -197,7 +279,7 @@ async function loadRecords() {
 
   const records = objs
     .map(mapNotionRowToRecord)
-    .filter(r => typeof r.id === "string" && r.id.startsWith("MR-"));
+    .filter((r) => typeof r.id === "string" && r.id.startsWith("MR-"));
 
   // Sort most recent first
   records.sort((a, b) => b.recordDateSort - a.recordDateSort);
@@ -216,26 +298,26 @@ function renderRecordsGrid(records) {
 
   grid.innerHTML = records
     .map((r) => {
-      const coverImage =
-        Array.isArray(r.images) && r.images.length > 0
-          ? r.images[0]
-          : "";
+      const coverImage = Array.isArray(r.images) && r.images.length > 0 ? r.images[0] : "";
+      const itemLabel = `${safeText(r.id)} — ${safeText(r.material, "Wood")} from ${safeText(r.origin, "unknown origin")}`;
 
       return `
-        <a class="record-tile" href="record.html?id=${encodeURIComponent(r.id)}">
-          <div class="record-tile-image">
-            ${
-              coverImage
-                ? `<img loading="lazy" src="${coverImage}" alt="${safeText(r.id)} cover image">`
-                : `<div class="record-tile-placeholder"></div>`
-            }
-          </div>
-          <div class="record-tile-meta">
-            <div class="record-tile-id">${safeText(r.id)}</div>
-            <div class="record-tile-line">${safeText(r.material)} · ${safeText(r.origin)}</div>
-            <div class="record-tile-line">${safeText(r.failureClass)} · ${safeText(r.state)}</div>
-          </div>
-        </a>
+        <article class="record-tile">
+          <a class="record-tile-link" href="record.html?id=${encodeURIComponent(r.id)}" aria-label="View ${escapeHtml(itemLabel)}">
+            <figure class="record-tile-image">
+              ${
+                coverImage
+                  ? `<img loading="lazy" src="${coverImage}" alt="${escapeHtml(r.alt)}">`
+                  : `<div class="record-tile-placeholder" aria-hidden="true"></div>`
+              }
+            </figure>
+            <div class="record-tile-meta">
+              <h2 class="record-tile-id">${escapeHtml(safeText(r.id))}</h2>
+              <p class="record-tile-line">${escapeHtml(safeText(r.material))} · ${escapeHtml(safeText(r.origin))}</p>
+              <p class="record-tile-line">${escapeHtml(safeText(r.failureClass))} · ${escapeHtml(safeText(r.state))}</p>
+            </div>
+          </a>
+        </article>
       `;
     })
     .join("");
@@ -245,17 +327,19 @@ function renderRecordPage(records) {
   const container = document.getElementById("record-container");
   if (!container) return;
 
-  const id = getQueryParam("id");
+  const id = normaliseRecordId(getQueryParam("id"));
   if (!id) {
     container.innerHTML = "<p>Record not found.</p>";
     return;
   }
 
-  const record = records.find(r => r.id === id);
+  const record = records.find((r) => r.id === id);
   if (!record) {
-    container.innerHTML = `<p>Record not found: ${safeText(id)}</p>`;
+    container.innerHTML = `<p>Record not found: ${escapeHtml(safeText(id))}</p>`;
     return;
   }
+
+  updateRecordSeo(record);
 
   const fields = [
     ["ID", record.id],
@@ -264,9 +348,9 @@ function renderRecordPage(records) {
     ["Material condition", record.materialCondition],
     ["Geometry class", record.geometryClass],
     ["Dimension", record.dimension],
-    ["Turning Orientation", record.turningOrientation],
-    ["Drying Orientation", record.dryingOrientation],
-    ["Failure Class", record.failureClass],
+    ["Turning orientation", record.turningOrientation],
+    ["Drying orientation", record.dryingOrientation],
+    ["Failure class", record.failureClass],
     ["State", record.state],
     ["Intervention", record.intervention],
     ["Availability", record.availability]
@@ -274,14 +358,25 @@ function renderRecordPage(records) {
 
   const metaHtml = fields
     .filter(([, v]) => isNonEmpty(v))
-    .map(([k, v]) => `<div class="meta-row"><div class="meta-key">${k}</div><div class="meta-val">${safeText(v)}</div></div>`)
+    .map(([k, v]) => {
+      const value = k === "Record Date" && !Number.isNaN(record.recordDateSort.getTime()) && record.recordDateSort.getTime() !== 0
+        ? `<time datetime="${record.recordDateSort.toISOString()}">${escapeHtml(safeText(v))}</time>`
+        : escapeHtml(safeText(v));
+
+      return `<div class="meta-row"><dt class="meta-key">${escapeHtml(k)}</dt><dd class="meta-val">${value}</dd></div>`;
+    })
     .join("");
 
   const images = Array.isArray(record.images) ? record.images : [];
   const imagesHtml = images.length
-    ? images.map((src, idx) =>
-        `<img class="record-image" loading="lazy" src="${src}" alt="${safeText(record.id)} image ${idx + 1}">`
-      ).join("")
+    ? images
+        .map(
+          (src, idx) => `
+            <figure class="record-figure">
+              <img class="record-image" loading="lazy" src="${src}" alt="${escapeHtml(buildRecordImageAlt(record, idx))}">
+            </figure>`
+        )
+        .join("")
     : `<p class="muted">Images pending.</p>`;
 
   const acquisition = isNonEmpty(record.acquisitionUrl)
@@ -289,21 +384,25 @@ function renderRecordPage(records) {
     : "";
 
   container.innerHTML = `
-    <div class="record-header">
-      <h1>${safeText(record.id)}</h1>
-      <div class="record-actions">
-        <a class="btn secondary" href="records.html">Back to Records</a>
-        ${acquisition}
-      </div>
-    </div>
+    <article class="record-entry">
+      <header class="record-header">
+        <h1>${escapeHtml(safeText(record.id))}</h1>
+        <div class="record-actions">
+          <a class="btn secondary" href="records.html">Back to Records</a>
+          ${acquisition}
+        </div>
+      </header>
 
-    <section class="record-meta">
-      ${metaHtml || "<p class='muted'>No metadata available.</p>"}
-    </section>
+      <section class="record-meta" aria-labelledby="record-details-heading">
+        <h2 id="record-details-heading" class="sr-only">Record details</h2>
+        ${metaHtml ? `<dl class="meta-list">${metaHtml}</dl>` : "<p class='muted'>No metadata available.</p>"}
+      </section>
 
-    <section class="record-images">
-      ${imagesHtml}
-    </section>
+      <section class="record-images" aria-labelledby="record-images-heading">
+        <h2 id="record-images-heading" class="sr-only">Record images</h2>
+        ${imagesHtml}
+      </section>
+    </article>
   `;
 }
 

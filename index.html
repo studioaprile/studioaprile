@@ -33,13 +33,13 @@
     <header class="site-header site-nav">
       <div class="site-nav__inner">
         <div class="logo">
-          <h1>studioaprile</h1>
+          <a class="logo__link" href="index.html">studioaprile</a>
         </div>
         <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav-panel">
           Menu
         </button>
       </div>
-      <nav class="site-nav__panel" id="site-nav-panel">
+      <nav class="site-nav__panel" id="site-nav-panel" aria-label="Primary">
         <ul>
           <li><a href="index.html">Material Recording</a></li>
           <li><a href="records.html">Records</a></li>
@@ -51,12 +51,12 @@
     </header>
 
     <main class="site-main">
-      <section class="media-area">
+      <section class="media-area" aria-label="Material Recording images">
         <div class="sa-carousel" data-interval="1800" data-transition="360">
           <div class="sa-carousel__track">
-            <div class="sa-carousel__slide"><img src="./images/home_01.webp" alt="Material Recording" loading="lazy"></div>
-            <div class="sa-carousel__slide"><img src="./images/home_02.webp" alt="Material Recording" loading="lazy"></div>
-            <div class="sa-carousel__slide"><img src="./images/home_03.webp" alt="Material Recording" loading="lazy"></div>
+            <div class="sa-carousel__slide"><img src="./images/home_01.webp" alt="Wood sculpture from the Material Recording series by Studio Aprile" loading="lazy"></div>
+            <div class="sa-carousel__slide"><img src="./images/home_02.webp" alt="Turned wood object from the Material Recording series by Studio Aprile" loading="lazy"></div>
+            <div class="sa-carousel__slide"><img src="./images/home_03.webp" alt="Contemporary wood object from the Material Recording series by Studio Aprile" loading="lazy"></div>
           </div>
         </div>
       </section>
@@ -66,9 +66,8 @@
           <p>Material Recording is an ongoing practice documenting how wood behaves under constraint, pressure and time.<br>
           Objects are produced, exposed to controlled conditions and recorded as their material state changes.<br>
           The work focuses on behaviour rather than form and on observation rather than outcome.<br>
-          It is not a collection of finished objects but a system for recording material response.<br><br>
-          <a class="btn" href="records.html">View recorded objects →</a>
-          </p>
+          It is not a collection of finished objects but a system for recording material response.</p>
+          <p><a class="btn" href="records.html">View recorded objects →</a></p>
 
           <h2>Method overview</h2>
           <ul>
@@ -77,34 +76,35 @@
             <li><strong>Failure</strong> Cracking, rupture, deformation and collapse are treated as recorded events rather than defects.</li>
             <li><strong>State</strong> Each object is observed over time and documented as active, stable or resolved.</li>
           </ul>
+
           <h2>Updates</h2>
-            <p>Occasional notes on Material Recording, object states and ongoing research.<br>
-            <form action="https://studioaprile.com/subscribe/submit/" method="POST" class="subscribe">
-              <div class="subscribe__row">
-                <label class="sr-only" for="subscribe-email">Email</label>
-                <input
-                  id="subscribe-email"
-                  name="email"
-                  type="email"
-                  required
-                  autocomplete="email"
-                  placeholder="Email"
-                />
-                <input type="hidden" name="source" value="home" />
-                <!-- honeypot -->
-                <div class="hp" style="position:absolute; left:-9999px;" aria-hidden="true">
-                  <label>
-                    Company
-                    <input name="company" tabindex="-1" autocomplete="off" />
-                  </label>
-                </div>
-                <button type="submit">Subscribe</button>
+          <p>Occasional notes on Material Recording, object states and ongoing research.</p>
+          <form action="https://studioaprile.com/subscribe/submit/" method="POST" class="subscribe">
+            <div class="subscribe__row">
+              <label class="sr-only" for="subscribe-email">Email</label>
+              <input
+                id="subscribe-email"
+                name="email"
+                type="email"
+                required
+                autocomplete="email"
+                placeholder="Email"
+              />
+              <input type="hidden" name="source" value="home" />
+              <!-- honeypot -->
+              <div class="hp" style="position:absolute; left:-9999px;" aria-hidden="true">
+                <label>
+                  Company
+                  <input name="company" tabindex="-1" autocomplete="off" />
+                </label>
               </div>
-              <p class="subscribe__note">No spam. You can unsubscribe at any time.</p></p>
-            </form>
-          </div>
-        </section>
-      </main>
+              <button type="submit">Subscribe</button>
+            </div>
+            <p class="subscribe__note">No spam. You can unsubscribe at any time.</p>
+          </form>
+        </div>
+      </section>
+    </main>
     <footer class="site-footer">
       <p>© 2026 Studioaprile. Contact: <a href="mailto:info@studioaprile.com">info@studioaprile.com</a></p>
     </footer>
