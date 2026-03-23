@@ -74,17 +74,20 @@ function formatRecordYear(date) {
   return String(date.getFullYear());
 }
 
+function normaliseMetaValue(value) {
+  const s = String(value || "").trim();
+  if (!s || s === "—" || s.toUpperCase() === "N/A") return "";
+  return s;
+}
+
 function buildRecordAlt(record) {
-  const year = formatRecordYear(record.recordDateSort);
-  const lead = isNonEmpty(record.material)
-    ? `${safeText(record.material, "Wood")} sculptural wood object by Studio Aprile`
-    : "Sculptural wood object by Studio Aprile";
+  const id = normaliseMetaValue(record.id);
+  const material = normaliseMetaValue(record.material);
+  const origin = normaliseMetaValue(record.origin);
+  const dimension = normaliseMetaValue(record.dimension);
 
-  const qualifiers = [record.origin, year, record.dimension]
-    .map((part) => String(part || "").trim())
-    .filter(Boolean);
-
-  return [lead, ...qualifiers].join(", ");
+  const subject = material ? `${material} wood object` : "Recorded object";
+  return [id, subject, origin, dimension].filter(Boolean).join(", ");
 }
 
 function buildRecordImageAlt(record, index) {
@@ -292,7 +295,7 @@ function renderRecordsGrid(records) {
   if (!grid) return;
 
   if (!records.length) {
-    grid.innerHTML = "<p class='muted'>No records available.</p>";
+    grid.innerHTML = "<li><p class='muted'>No records available.</p></li>";
     return;
   }
 
@@ -300,24 +303,27 @@ function renderRecordsGrid(records) {
     .map((r) => {
       const coverImage = Array.isArray(r.images) && r.images.length > 0 ? r.images[0] : "";
       const itemLabel = `${safeText(r.id)} — ${safeText(r.material, "Wood")} from ${safeText(r.origin, "unknown origin")}`;
+      const headingId = `record-tile-title-${normaliseRecordId(r.id).toLowerCase()}`;
 
       return `
-        <article class="record-tile">
-          <a class="record-tile-link" href="record.html?id=${encodeURIComponent(r.id)}" aria-label="View ${escapeHtml(itemLabel)}">
-            <figure class="record-tile-image">
-              ${
-                coverImage
-                  ? `<img loading="lazy" src="${coverImage}" alt="${escapeHtml(r.alt)}">`
-                  : `<div class="record-tile-placeholder" aria-hidden="true"></div>`
-              }
-            </figure>
-            <div class="record-tile-meta">
-              <h2 class="record-tile-id">${escapeHtml(safeText(r.id))}</h2>
-              <p class="record-tile-line">${escapeHtml(safeText(r.material))} · ${escapeHtml(safeText(r.origin))}</p>
-              <p class="record-tile-line">${escapeHtml(safeText(r.failureClass))} · ${escapeHtml(safeText(r.state))}</p>
-            </div>
-          </a>
-        </article>
+        <li>
+          <article class="record-tile" aria-labelledby="${headingId}">
+            <a class="record-tile-link" href="record.html?id=${encodeURIComponent(r.id)}" aria-label="View ${escapeHtml(itemLabel)}">
+              <figure class="record-tile-image">
+                ${
+                  coverImage
+                    ? `<img loading="lazy" src="${coverImage}" alt="${escapeHtml(r.alt)}">`
+                    : `<div class="record-tile-placeholder" aria-hidden="true"></div>`
+                }
+              </figure>
+              <div class="record-tile-meta">
+                <h2 id="${headingId}" class="record-tile-id">${escapeHtml(safeText(r.id))}</h2>
+                <p class="record-tile-line">${escapeHtml(safeText(r.material))} · ${escapeHtml(safeText(r.origin))}</p>
+                <p class="record-tile-line">${escapeHtml(safeText(r.failureClass))} · ${escapeHtml(safeText(r.state))}</p>
+              </div>
+            </a>
+          </article>
+        </li>
       `;
     })
     .join("");
