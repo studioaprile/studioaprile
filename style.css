@@ -1617,3 +1617,25 @@ main h1, main h2, main h3 {
 .meta-list {
   margin: 0;
 }
+
+
+/* Material recording paper: single centered reading column (no media/right column split) */
+@media (min-width: 901px) {
+  .layout-3col.layout-paper .site-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .layout-3col.layout-paper .text-area {
+    grid-column: 1;
+    justify-self: center;
+    width: 100%;
+    max-width: 72ch;
+  }
+}
+
+/* Homepage system paper CTA sizing */
+.btn--paper-link {
+  width: 100%;
+  max-width: 240px;
+  margin-bottom: 10px;
+}
