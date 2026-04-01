@@ -1,4 +1,4 @@
-# Project Lock (v3) — Canonical Rules
+# Project Lock (v3.1) — Canonical Rules
 
 - Site type: static site
 - Records source: `/data/records.csv` exported from Notion
