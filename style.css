@@ -375,24 +375,32 @@ main{ padding:38px 0 64px; }
 .product-meta{ margin:0 0 12px; color:var(--muted); font-size:13px; }
 .product-actions{ display:flex; align-items:center; gap:10px; }
 
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  height:38px;
-  padding:0 14px;
-  border-radius:8px; /* keep as requested */
-  border:1px solid var(--fg);
-  background:var(--fg);
-  color:#fff;
-  font-size:13px;
-  letter-spacing:.35px;
-  text-transform:uppercase;
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid var(--fg);
+  border-radius: 8px;
+  background: var(--fg);
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
 }
-.btn:hover{ opacity:.9; }
-.btn.secondary{
-  background:transparent;
-  color:var(--fg);
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--fg);
 }
 
 @media (max-width: 980px){
@@ -490,21 +498,6 @@ main{ padding:38px 0 64px; }
 
 .page ul {
   padding-left: 20px;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 10px 12px;
-  border: 1px solid #333;
-  text-decoration: none;
-  font-size: 14px;
-  color: #ffffff;
-}
-
-.btn.secondary {
-  border-color: #999;
-  color: #333;
 }
 
 .muted {
@@ -1633,9 +1626,6 @@ main h1, main h2, main h3 {
   }
 }
 
-/* Homepage system paper CTA sizing */
-.btn--paper-link {
-  width: 100%;
-  max-width: 240px;
-  margin-bottom: 10px;
+.button-row {
+  margin: 0 0 20px 0;
 }
