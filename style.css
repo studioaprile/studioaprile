@@ -1364,161 +1364,111 @@ main h1, main h2, main h3 {
   margin-bottom: 14px;
 }
 
-/* ================================
-   Home subscribe form — scoped + quiet
-   ================================ */
+/* =========================================
+   Home subscribe form (single source of truth)
+   iOS-safe control sizing for Safari + Chrome
+   ========================================= */
 .subscribe {
-  /* keep spacing controlled and consistent */
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .subscribe .subscribe__row {
   display: flex;
   gap: 10px;
-  align-items: center;
-  margin-top: 6px;
+  align-items: stretch;
+  margin-top: 4px;
 }
 
-/* Hide honeypot reliably */
-.subscribe .hp {
-  display: none !important;
-}
-
-/* Input styling: inherit site typography + minimal borders */
 .subscribe input[name="email"] {
   flex: 1;
   min-width: 180px;
-  font: inherit;
-  font-size: 13px;
-  line-height: 1.4;
+  min-height: 38px;
   padding: 9px 11px;
   border: 1px solid #ddd;
   border-radius: 6px;
   background: transparent;
   color: inherit;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.25;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .subscribe input[name="email"]::placeholder {
   opacity: 0.6;
 }
 
-/* Quiet focus state */
-.subscribe input[name="email"]:focus {
+.subscribe input[name="email"]:focus,
+.subscribe .subscribe__row button:focus,
+.subscribe .subscribe__row input[type="submit"]:focus {
   outline: none;
   border-color: #111;
 }
 
-/* Button: keep existing .btn styles if present; only ensure it doesn’t break layout */
-.subscribe .subscribe__row .btn,
-.subscribe button[type="submit"],
-.subscribe input[type="submit"] {
-  white-space: nowrap;
-}
-
-/* Note text: smaller + subdued */
-.subscribe .subscribe__note {
-  margin-top: 6px;
-  font-size: 12px;
-  line-height: 1.45;
-  opacity: 0.65;
-}
-
-/* Mobile: stack */
-@media (max-width: 900px) {
-  .subscribe .subscribe__row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .subscribe .subscribe__row .btn,
-  .subscribe button[type="submit"],
-  .subscribe input[type="submit"] {
-    width: 100%;
-  }
-}
-
-/* =================================
-   Fix subscribe button styling
-   (scoped, higher specificity)
-   ================================= */
-
-/* Force button to use site secondary style inside subscribe form */
 .subscribe .subscribe__row button,
 .subscribe .subscribe__row .btn,
 .subscribe .subscribe__row input[type="submit"] {
+  min-height: 38px;
+  padding: 9px 12px;
+  border: 1px solid #111;
+  border-radius: 6px;
   background: #111;
   color: #fff;
-  border: 1px solid #111;
   font: inherit;
   font-size: 12px;
+  line-height: 1.25;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 10px 12px;
-  border-radius: 6px;
+  white-space: nowrap;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
-/* Hover state – subtle */
 .subscribe .subscribe__row button:hover,
 .subscribe .subscribe__row .btn:hover,
 .subscribe .subscribe__row input[type="submit"]:hover {
   opacity: 0.9;
 }
 
-/* Ensure no reset wipes it out */
-.subscribe .subscribe__row button:focus {
-  outline: none;
-}
-
-/* Mobile full-width already handled elsewhere */
-
-/* =========================================
-   Home subscribe form — final spacing polish
-   ========================================= */
-
-/* Pull form closer to preceding text */
-.subscribe {
-  margin-top: 6px;
-}
-
-/* Reduce gap above the form row */
-.subscribe .subscribe__row {
-  margin-top: 4px;
-}
-
-/* Ensure input height matches button */
-.subscribe input[name="email"] {
-  height: 38px;
-  padding: 0 11px;
-  box-sizing: border-box;
-}
-
-/* Ensure button height matches input */
-.subscribe button,
-.subscribe input[type="submit"] {
-  height: 38px;
-  padding: 0 12px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Hide any visible label text (keep for accessibility) */
-.subscribe label {
-  position: absolute !important;
+.subscribe .hp {
+  position: absolute;
   width: 1px;
   height: 1px;
-  padding: 0;
   margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
+  padding: 0;
   border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
-/* Reduce space below form note */
 .subscribe .subscribe__note {
   margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.45;
+  opacity: 0.65;
+}
+
+@media (max-width: 900px) {
+  .subscribe .subscribe__row {
+    flex-direction: column;
+  }
+
+  .subscribe .subscribe__row button,
+  .subscribe .subscribe__row .btn,
+  .subscribe .subscribe__row input[type="submit"] {
+    width: 100%;
+  }
+
+  .subscribe input[name="email"] {
+    font-size: 16px;
+  }
 }
 
 /* =========================================
@@ -1535,31 +1485,6 @@ main h1, main h2, main h3 {
   .text-area .content-block > h1:first-child {
     margin-top: 10px;
   }
-}
-
-/* =========================================
-   Subscribe form: force equal heights (scoped)
-   ========================================= */
-.subscribe .subscribe__row input[name="email"] {
-  height: 38px !important;
-  padding: 0 11px !important;
-  box-sizing: border-box !important;
-  line-height: 38px !important;
-}
-
-.subscribe .subscribe__row button,
-.subscribe .subscribe__row input[type="submit"] {
-  height: 38px !important;
-  padding: 0 12px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  line-height: 1 !important;
-}
-
-/* If any global button reset is shrinking it, keep it stable */
-.subscribe .subscribe__row button {
-  min-height: 38px !important;
 }
 
 /* =========================================
